@@ -1,0 +1,85 @@
+\doxysection{Case\+List Class Reference}
+\hypertarget{class_case_list}{}\label{class_case_list}\index{CaseList@{CaseList}}
+
+
+класс \doxylink{class_case_list}{Case\+List} Список дел  
+
+
+
+
+{\ttfamily \#include $<$Case\+List.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_case_list_a2941dbe03a8fae46e35f88279ce6eb94}\label{class_case_list_a2941dbe03a8fae46e35f88279ce6eb94} 
+{\bfseries Case\+List} (const std\+::string \&filename)
+\begin{DoxyCompactList}\small\item\em конструктор класса \doxylink{class_case_list}{Case\+List} Выполняет чтения списка дел из файла \end{DoxyCompactList}\item 
+\Hypertarget{class_case_list_a6bd6b48f7e985ac64c6411aadec47e6c}\label{class_case_list_a6bd6b48f7e985ac64c6411aadec47e6c} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Case\+List} ()
+\begin{DoxyCompactList}\small\item\em деструктор класса \doxylink{class_case_list}{Case\+List} Выполняет запись списка дел в файл \end{DoxyCompactList}\item 
+\Hypertarget{class_case_list_aa207556664021504d69ae19bf369d04d}\label{class_case_list_aa207556664021504d69ae19bf369d04d} 
+void {\bfseries Add\+Case} (const \mbox{\hyperlink{class_case}{Case}} \&case\+\_\+)
+\begin{DoxyCompactList}\small\item\em метод для добавления дела в конец списка param\mbox{[}in\mbox{]} case\+\_\+ ссылка на объект класса \doxylink{class_case}{Case} \end{DoxyCompactList}\item 
+\Hypertarget{class_case_list_a143e08f504ed87fb628a428fbf52289e}\label{class_case_list_a143e08f504ed87fb628a428fbf52289e} 
+bool {\bfseries Delete\+Case} (size\+\_\+t index)
+\begin{DoxyCompactList}\small\item\em метод для удаления дела по индексу param\mbox{[}in\mbox{]} index индекс дела в векторе дел param\mbox{[}out\mbox{]} результат удаления \end{DoxyCompactList}\item 
+\Hypertarget{class_case_list_a6c0cb5e825b325c0ba6ab3720086c229}\label{class_case_list_a6c0cb5e825b325c0ba6ab3720086c229} 
+size\+\_\+t {\bfseries Size} () const
+\begin{DoxyCompactList}\small\item\em метод возвращающий количество дел в списке \end{DoxyCompactList}\item 
+\Hypertarget{class_case_list_a7603b92e2b6fd2bcb26200f4d9e8fbcd}\label{class_case_list_a7603b92e2b6fd2bcb26200f4d9e8fbcd} 
+void {\bfseries Sort\+Case\+List\+By\+Date} ()
+\begin{DoxyCompactList}\small\item\em метод для сортировки дел по дате \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{class_case_list_a939323e7b9a8b301cfd46bc35d9c025e}{Get\+Number\+Of\+Spaces}} (size\+\_\+t index)
+\item 
+\Hypertarget{class_case_list_a804117689c217a70c676652ab2cec12e}\label{class_case_list_a804117689c217a70c676652ab2cec12e} 
+void {\bfseries Print\+Case\+List} ()
+\item 
+\Hypertarget{class_case_list_ae8fce8a5029c69ed1018d82a8ad07d1d}\label{class_case_list_ae8fce8a5029c69ed1018d82a8ad07d1d} 
+void {\bfseries Change\+Title} (const std\+::string \&title, size\+\_\+t index)
+\item 
+\Hypertarget{class_case_list_a0aae2b9a4d5a2bcefb228afb6ac81802}\label{class_case_list_a0aae2b9a4d5a2bcefb228afb6ac81802} 
+void {\bfseries Change\+Date} (const std\+::string \&title, size\+\_\+t index)
+\item 
+\Hypertarget{class_case_list_ac52e6585bef55485790852f63536b8b0}\label{class_case_list_ac52e6585bef55485790852f63536b8b0} 
+void {\bfseries Mark\+Is\+Done} (size\+\_\+t index)
+\item 
+\Hypertarget{class_case_list_af7ad449bfd987f0f0dcf2c82668214cb}\label{class_case_list_af7ad449bfd987f0f0dcf2c82668214cb} 
+void {\bfseries Mark\+Is\+Not\+Done} (size\+\_\+t index)
+\item 
+\mbox{\hyperlink{class_case}{Case}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_case_list_a5fd6834607ab9111a9af4e17562e89a4}{Get\+Case}} (size\+\_\+t index) const
+\item 
+\Hypertarget{class_case_list_a60461f15081be549ec2cb19edc4aa2bc}\label{class_case_list_a60461f15081be549ec2cb19edc4aa2bc} 
+void {\bfseries Clear} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+класс \doxylink{class_case_list}{Case\+List} Список дел 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_case_list_a5fd6834607ab9111a9af4e17562e89a4}\label{class_case_list_a5fd6834607ab9111a9af4e17562e89a4} 
+\index{CaseList@{CaseList}!GetCase@{GetCase}}
+\index{GetCase@{GetCase}!CaseList@{CaseList}}
+\doxysubsubsection{\texorpdfstring{GetCase()}{GetCase()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_case}{Case}} \texorpdfstring{$\ast$}{*} Case\+List\+::\+Get\+Case (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{index }\end{DoxyParamCaption}) const}
+
+\textbackslash{}breif метод возвращает указатель на объект класса \doxylink{class_case}{Case}, который находится по переданному индексу в векторе \+\_\+case\+List param\mbox{[}in\mbox{]} index индекс дела в векторе \+\_\+case\+List param\mbox{[}out\mbox{]} Case\texorpdfstring{$\ast$}{*} указатель на объект класса \doxylink{class_case}{Case} \Hypertarget{class_case_list_a939323e7b9a8b301cfd46bc35d9c025e}\label{class_case_list_a939323e7b9a8b301cfd46bc35d9c025e} 
+\index{CaseList@{CaseList}!GetNumberOfSpaces@{GetNumberOfSpaces}}
+\index{GetNumberOfSpaces@{GetNumberOfSpaces}!CaseList@{CaseList}}
+\doxysubsubsection{\texorpdfstring{GetNumberOfSpaces()}{GetNumberOfSpaces()}}
+{\footnotesize\ttfamily size\+\_\+t Case\+List\+::\+Get\+Number\+Of\+Spaces (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{index }\end{DoxyParamCaption})}
+
+метод возвращает количество пробелов после названия дела(задачи) до начала даты для выравнивания по ширине. Количество пробелов получается путём вычитания длины самого длинного названия дела и дела, которое выводится на печать. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em index} & индекс дела(задачи) в векторе задач \+\_\+case\+List \\
+\hline
+\mbox{\texttt{ out}}  & {\em size\+\_\+t} & количество пробелов после выведенного на экран названия дела. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Case\+List.\+h\item 
+Case\+List.\+cpp\end{DoxyCompactItemize}

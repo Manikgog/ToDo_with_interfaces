@@ -1,0 +1,116 @@
+\doxysection{IRead\+Write\+File.\+h}
+\hypertarget{_i_read_write_file_8h_source}{}\label{_i_read_write_file_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ \_IREADWRITEFILE\_H\_}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ \_IREADWRITEFILE\_H\_}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}Case.h"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_i_read_write_binary_file}{IReadWriteBinaryFile}}}
+\DoxyCodeLine{00011\ \{}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00014\ \ \ \ \ \mbox{\hyperlink{class_i_read_write_binary_file}{IReadWriteBinaryFile}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00015\ \ \ \ \ \mbox{\hyperlink{class_i_read_write_binary_file}{\string~IReadWriteBinaryFile}}()\ \{\}}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{virtual}\ std::vector<std::unique\_ptr<Case>>\ ReadBinaryFile()\ =\ 0;}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ WriteBinaryFile(std::vector<std::unique\_ptr<Case>>\&\ list)\ =\ 0;}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \};}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_read_write_binary_file}{ReadWriteBinaryFile}}\ :\ \textcolor{keyword}{public}\ \ \mbox{\hyperlink{class_i_read_write_binary_file}{IReadWriteBinaryFile}}}
+\DoxyCodeLine{00023\ \{}
+\DoxyCodeLine{00024\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{class_read_write_binary_file}{ReadWriteBinaryFile}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{class_read_write_binary_file}{ReadWriteBinaryFile}}(std::string\ filename)\ :\ \_filename(filename)\ \{\}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{class_read_write_binary_file}{\string~ReadWriteBinaryFile}}()}
+\DoxyCodeLine{00029\ \ \ \ \ \{\}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ std::vector<std::unique\_ptr<Case>>\ ReadBinaryFile()\textcolor{keyword}{\ override}}
+\DoxyCodeLine{00032\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ std::ifstream\ fin;\ \textcolor{comment}{//<\ creating\ an\ ifstream\ object\ to\ read\ data\ from\ a\ file}}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ std::vector<std::unique\_ptr<Case>>\ listCases;}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ fin.open(this-\/>\_filename,\ std::ios\_base::in\ |\ std::ios\_base::binary);}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{comment}{//<\ writing\ cases\ from\ a\ file\ to\ the\ listCases\ array}}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{comment}{//<\ запись\ дел\ из\ файла\ в\ массив\ listCases}}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!fin.is\_open())\ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Ошибка\ открытия\ файла.\(\backslash\)n"{}};}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ listCases;}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//std::cout\ <<\ "{}Файл\ открыт.\(\backslash\)n"{};}}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }C4se}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ title[\_sizeTitle]\{\};}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_date}{Date}}\ date;}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ isDone;}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ C4se\ c4se;}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (fin.read((\textcolor{keywordtype}{char}*)\&c4se,\ \textcolor{keyword}{sizeof}(C4se)))}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ listCases.push\_back(std::make\_unique<Case>(c4se.title,\ c4se.date,\ c4se.isDone));}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ fin.close();}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ listCases;}
+\DoxyCodeLine{00059\ \ \ \ \ \}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{bool}\ WriteBinaryFile(std::vector<std::unique\_ptr<Case>>\&\ list)}
+\DoxyCodeLine{00062\ \ \ \ \ \{}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ std::ofstream\ fout;}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ fout.open(this-\/>\_filename,\ std::ios\_base::out\ |\ std::ios\_base::binary);}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!fout.is\_open())\ \{}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Невозможно\ открыть\ файл.\(\backslash\)n"{}};}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }C4se}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ title[\_sizeTitle]\{\};}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_date}{Date}}\ date;}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ isDone\{\};}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ list.size();\ ++j)}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ C4se\ c4se;}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ lengthOfTitleString\ =\ list.at(j)-\/>GetTitle().size();}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (lengthOfTitleString\ >=\ \_sizeTitle)}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ lengthOfTitleString\ =\ \_sizeTitle\ -\/\ 1;}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ lengthOfTitleString;\ ++i)}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ c4se.title[i]\ =\ list.at(j).get()-\/>GetTitle().at(i);}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ c4se.date\ =\ list.at(j).get()-\/>GetDate();}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ c4se.isDone\ =\ list.at(j).get()-\/>GetIsDoneMark();}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ fout.write((\textcolor{keywordtype}{char}*)\&c4se,\ \textcolor{keyword}{sizeof}(C4se));}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ fout.close();}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00095\ \ \ \ \ \}}
+\DoxyCodeLine{00096\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00097\ \ \ \ \ std::string\ \_filename;}
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ \_sizeTitle\ =\ 56;}
+\DoxyCodeLine{00099\ \};}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \textcolor{comment}{//IReadWriteBinaryFile*\ CreateInstance(const\ std::string\&\ filename)}}
+\DoxyCodeLine{00102\ \textcolor{comment}{//\{}}
+\DoxyCodeLine{00103\ \textcolor{comment}{//\ \ //IUnknown*\ pI\ =\ static\_cast<IX*>(new\ CA);}}
+\DoxyCodeLine{00104\ \textcolor{comment}{//\ \ IReadWriteBinaryFile*\ p\_I\ =\ static\_cast<ReadWriteBinaryFile*>(new\ ReadWriteBinaryFile(filename));}}
+\DoxyCodeLine{00105\ \textcolor{comment}{//}}
+\DoxyCodeLine{00106\ \textcolor{comment}{//\ \ return\ p\_I;}}
+\DoxyCodeLine{00107\ \textcolor{comment}{//\}}}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ !\_IREADWRITEFILE\_H\_}}
+\DoxyCodeLine{00111\ }
+
+\end{DoxyCode}

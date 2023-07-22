@@ -1,0 +1,134 @@
+\doxysection{Input\+Output Class Reference}
+\hypertarget{class_input_output}{}\label{class_input_output}\index{InputOutput@{InputOutput}}
+
+
+класс, обеспечивает интерфейс с пользователем приложения Класс выполняет\+:  
+
+
+
+
+{\ttfamily \#include $<$Input\+Output.\+h$>$}
+
+Inheritance diagram for Input\+Output\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_input_output}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_input_output_a1dd21b19279a74cab56f3296c2355fbf}\label{class_input_output_a1dd21b19279a74cab56f3296c2355fbf} 
+void {\bfseries Adding\+Case} ()
+\begin{DoxyCompactList}\small\item\em метод для обеспечения добавления нового дела в список \end{DoxyCompactList}\item 
+\Hypertarget{class_input_output_ae3db347971e73670a5c17bd886ccd9c6}\label{class_input_output_ae3db347971e73670a5c17bd886ccd9c6} 
+bool {\bfseries Check\+Date} (std\+::string date)
+\begin{DoxyCompactList}\small\item\em метод для проверки введенной даты param\mbox{[}in\mbox{]} date дата в виде С++-\/строки param\mbox{[}out\mbox{]} возвращает результат в виде булевого значения \end{DoxyCompactList}\item 
+\Hypertarget{class_input_output_afbac94fbe3e71d2ed50642455141dbcd}\label{class_input_output_afbac94fbe3e71d2ed50642455141dbcd} 
+bool {\bfseries Is\+Valid\+Date} (int day, int month, int year)
+\begin{DoxyCompactList}\small\item\em метод для проверки введенной даты Переданная величина номера дня должна лежать в пределах размеров переданного месяца. Номер месяца проверяется на соответстви количеству месяцев в году. param\mbox{[}in\mbox{]} day номер дня param\mbox{[}in\mbox{]} month номер месяца param\mbox{[}in\mbox{]} year год param\mbox{[}out\mbox{]} возвращает результат в виде булевого значения \end{DoxyCompactList}\item 
+\Hypertarget{class_input_output_ae731d38deeadcafc707295c2f7f3f6f5}\label{class_input_output_ae731d38deeadcafc707295c2f7f3f6f5} 
+bool {\bfseries is\+Leap\+Year} (int year)
+\begin{DoxyCompactList}\small\item\em метод для проверки високосности года param\mbox{[}in\mbox{]} year номер года param\mbox{[}out\mbox{]} true -\/ високосный, false -\/ невисокосный \end{DoxyCompactList}\item 
+\Hypertarget{class_input_output_a6397fe2713b5183184b8b0930cb7b9b0}\label{class_input_output_a6397fe2713b5183184b8b0930cb7b9b0} 
+bool {\bfseries Check\+Overdue\+Case} (int day, int month, int year, unsigned short current\+Year, unsigned short current\+Month, unsigned short current\+Day) const
+\begin{DoxyCompactList}\small\item\em метод для проверки прошла ли введённая дата или нет param\mbox{[}in\mbox{]} day -\/ введённый пользователем день param\mbox{[}in\mbox{]} month -\/ введённый пользователем месяц param\mbox{[}in\mbox{]} year -\/ введённый пользователем год param\mbox{[}in\mbox{]} current\+Day -\/ текущий день param\mbox{[}in\mbox{]} current\+Month -\/ текущий месяц param\mbox{[}in\mbox{]} current\+Year -\/ текущий год param\mbox{[}out\mbox{]} true -\/ дата не прошла, false -\/ дата уже прошла \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_input_output_af575cb05e700da8f50594c7b255025cc}{Change\+Case}} (int num\+Case, int num)
+\begin{DoxyCompactList}\small\item\em метод для выбора действия с делом \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_input_output_a6fcf7a1ccc0dbeb13799ac083561bbef}{Change\+Title}} (int num\+Case)
+\item 
+void \mbox{\hyperlink{class_input_output_a06e6feab3d5914bff353d597b22287f4}{Change\+Date}} (int num\+Case)
+\item 
+void \mbox{\hyperlink{class_input_output_aa6d703ea323ebd2a4be4e3f576de4085}{Delete\+Case}} (int num\+Case)
+\item 
+void \mbox{\hyperlink{class_input_output_a1ddfbb4dd2220beb84502c71136f239e}{Mark\+Case}} (int num\+Case)
+\item 
+\Hypertarget{class_input_output_addff77bac83bfda587c023a3e7689b7b}\label{class_input_output_addff77bac83bfda587c023a3e7689b7b} 
+{\bfseries Input\+Output} (const std\+::string \&filename)
+\item 
+\Hypertarget{class_input_output_adccfb72d37270735af740b4487d72cf6}\label{class_input_output_adccfb72d37270735af740b4487d72cf6} 
+\mbox{\hyperlink{class_case_list}{Case\+List}} \texorpdfstring{$\ast$}{*} {\bfseries Get\+Case\+List} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+класс, обеспечивает интерфейс с пользователем приложения Класс выполняет\+: 
+
+
+\begin{DoxyItemize}
+\item отображение основного меню;
+\item добавление нового дела;
+\item удаление всего списка дел;
+\item сортировку списка по дате;
+\item выбор дела и его изменение или удаление;
+\item выход из программы. 
+\end{DoxyItemize}
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_input_output_af575cb05e700da8f50594c7b255025cc}\label{class_input_output_af575cb05e700da8f50594c7b255025cc} 
+\index{InputOutput@{InputOutput}!ChangeCase@{ChangeCase}}
+\index{ChangeCase@{ChangeCase}!InputOutput@{InputOutput}}
+\doxysubsubsection{\texorpdfstring{ChangeCase()}{ChangeCase()}}
+{\footnotesize\ttfamily void Input\+Output\+::\+Change\+Case (\begin{DoxyParamCaption}\item[{int}]{num\+Case,  }\item[{int}]{num }\end{DoxyParamCaption})}
+
+
+
+метод для выбора действия с делом 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em num\+Case} & индекс дела в списке \\
+\hline
+\mbox{\texttt{ in}}  & {\em num} & номер действия из меню \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_input_output_a06e6feab3d5914bff353d597b22287f4}\label{class_input_output_a06e6feab3d5914bff353d597b22287f4} 
+\index{InputOutput@{InputOutput}!ChangeDate@{ChangeDate}}
+\index{ChangeDate@{ChangeDate}!InputOutput@{InputOutput}}
+\doxysubsubsection{\texorpdfstring{ChangeDate()}{ChangeDate()}}
+{\footnotesize\ttfamily void Input\+Output\+::\+Change\+Date (\begin{DoxyParamCaption}\item[{int}]{num\+Case }\end{DoxyParamCaption})}
+
+метод для изменения даты дела 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em num\+Case} & номер дела \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_input_output_a6fcf7a1ccc0dbeb13799ac083561bbef}\label{class_input_output_a6fcf7a1ccc0dbeb13799ac083561bbef} 
+\index{InputOutput@{InputOutput}!ChangeTitle@{ChangeTitle}}
+\index{ChangeTitle@{ChangeTitle}!InputOutput@{InputOutput}}
+\doxysubsubsection{\texorpdfstring{ChangeTitle()}{ChangeTitle()}}
+{\footnotesize\ttfamily void Input\+Output\+::\+Change\+Title (\begin{DoxyParamCaption}\item[{int}]{num\+Case }\end{DoxyParamCaption})}
+
+метод для изменения названия дела 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em num\+Case} & номер дела \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_input_output_aa6d703ea323ebd2a4be4e3f576de4085}\label{class_input_output_aa6d703ea323ebd2a4be4e3f576de4085} 
+\index{InputOutput@{InputOutput}!DeleteCase@{DeleteCase}}
+\index{DeleteCase@{DeleteCase}!InputOutput@{InputOutput}}
+\doxysubsubsection{\texorpdfstring{DeleteCase()}{DeleteCase()}}
+{\footnotesize\ttfamily void Input\+Output\+::\+Delete\+Case (\begin{DoxyParamCaption}\item[{int}]{num\+Case }\end{DoxyParamCaption})}
+
+метод для удаления дела из списка 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em num\+Case} & номер дела \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_input_output_a1ddfbb4dd2220beb84502c71136f239e}\label{class_input_output_a1ddfbb4dd2220beb84502c71136f239e} 
+\index{InputOutput@{InputOutput}!MarkCase@{MarkCase}}
+\index{MarkCase@{MarkCase}!InputOutput@{InputOutput}}
+\doxysubsubsection{\texorpdfstring{MarkCase()}{MarkCase()}}
+{\footnotesize\ttfamily void Input\+Output\+::\+Mark\+Case (\begin{DoxyParamCaption}\item[{int}]{num\+Case }\end{DoxyParamCaption})}
+
+метод для отметки дела как выполненное или нет 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em num\+Case} & номер дела \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Input\+Output.\+h\item 
+Input\+Output.\+cpp\end{DoxyCompactItemize}

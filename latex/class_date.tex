@@ -1,0 +1,137 @@
+\doxysection{Date Class Reference}
+\hypertarget{class_date}{}\label{class_date}\index{Date@{Date}}
+
+
+Класс \doxylink{class_date}{Date}, который содержит поля день, месяц, год  
+
+
+
+
+{\ttfamily \#include $<$Date.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_date_ab1ad19969fa570605a6b0cd32b0da822}\label{class_date_ab1ad19969fa570605a6b0cd32b0da822} 
+{\bfseries Date} (int day, int month, int year)
+\item 
+\Hypertarget{class_date_ae511a4802384a715301536ee81aafc99}\label{class_date_ae511a4802384a715301536ee81aafc99} 
+{\bfseries Date} (std\+::string date)
+\begin{DoxyCompactList}\small\item\em конструктор, преобразующий С++ строку в дату \+\_\+day, \+\_\+month, \+\_\+year \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_date_af837c1acdc32cf9627c6eda8a99a30c0}{Get\+Day}} ()
+\begin{DoxyCompactList}\small\item\em метод возвращающий дня \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_date_aaf12a88ae7c1b34f8aae0674b707d37c}{Get\+Month}} ()
+\begin{DoxyCompactList}\small\item\em метод возвращающий число месяца \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_date_acaa98770c2197d67058f8251a6890eb2}{Get\+Year}} ()
+\begin{DoxyCompactList}\small\item\em метод возвращающий число года \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_date_ae46a679579ec061c2d37eb1aa80b29e4}{operator$<$}} (const \mbox{\hyperlink{class_date}{Date}} \&date)
+\begin{DoxyCompactList}\small\item\em перегрузка оператора \textquotesingle{}\texorpdfstring{$<$}{<}\textquotesingle{} \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_date_a4b933e8c9e1a5853918ad88eb2fc2dae}{operator==}} (const \mbox{\hyperlink{class_date}{Date}} \&date)
+\begin{DoxyCompactList}\small\item\em перегрузка оператора \textquotesingle{}==\textquotesingle{} \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_date_a556af85013c9c8a573e023768f786c97}{operator$>$}} (const \mbox{\hyperlink{class_date}{Date}} \&date)
+\begin{DoxyCompactList}\small\item\em перегрузка оператора \textquotesingle{}\texorpdfstring{$>$}{>}\textquotesingle{} \end{DoxyCompactList}\item 
+\Hypertarget{class_date_aa7c63777f374a020c504b95fc645ccc9}\label{class_date_aa7c63777f374a020c504b95fc645ccc9} 
+void {\bfseries Print\+Date} ()
+\begin{DoxyCompactList}\small\item\em метод для вывода на экран даты \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Класс \doxylink{class_date}{Date}, который содержит поля день, месяц, год 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_date_af837c1acdc32cf9627c6eda8a99a30c0}\label{class_date_af837c1acdc32cf9627c6eda8a99a30c0} 
+\index{Date@{Date}!GetDay@{GetDay}}
+\index{GetDay@{GetDay}!Date@{Date}}
+\doxysubsubsection{\texorpdfstring{GetDay()}{GetDay()}}
+{\footnotesize\ttfamily int Date\+::\+Get\+Day (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+метод возвращающий дня 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em \+\_\+day} & число дня \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_date_aaf12a88ae7c1b34f8aae0674b707d37c}\label{class_date_aaf12a88ae7c1b34f8aae0674b707d37c} 
+\index{Date@{Date}!GetMonth@{GetMonth}}
+\index{GetMonth@{GetMonth}!Date@{Date}}
+\doxysubsubsection{\texorpdfstring{GetMonth()}{GetMonth()}}
+{\footnotesize\ttfamily int Date\+::\+Get\+Month (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+метод возвращающий число месяца 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em \+\_\+month} & число месяца \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_date_acaa98770c2197d67058f8251a6890eb2}\label{class_date_acaa98770c2197d67058f8251a6890eb2} 
+\index{Date@{Date}!GetYear@{GetYear}}
+\index{GetYear@{GetYear}!Date@{Date}}
+\doxysubsubsection{\texorpdfstring{GetYear()}{GetYear()}}
+{\footnotesize\ttfamily int Date\+::\+Get\+Year (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+метод возвращающий число года 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em \+\_\+year} & число года \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_date_ae46a679579ec061c2d37eb1aa80b29e4}\label{class_date_ae46a679579ec061c2d37eb1aa80b29e4} 
+\index{Date@{Date}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!Date@{Date}}
+\doxysubsubsection{\texorpdfstring{operator$<$()}{operator<()}}
+{\footnotesize\ttfamily bool Date\+::operator$<$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_date}{Date}} \&}]{date }\end{DoxyParamCaption})}
+
+
+
+перегрузка оператора \textquotesingle{}\texorpdfstring{$<$}{<}\textquotesingle{} 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em bool} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_date_a4b933e8c9e1a5853918ad88eb2fc2dae}\label{class_date_a4b933e8c9e1a5853918ad88eb2fc2dae} 
+\index{Date@{Date}!operator==@{operator==}}
+\index{operator==@{operator==}!Date@{Date}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool Date\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_date}{Date}} \&}]{date }\end{DoxyParamCaption})}
+
+
+
+перегрузка оператора \textquotesingle{}==\textquotesingle{} 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em bool} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_date_a556af85013c9c8a573e023768f786c97}\label{class_date_a556af85013c9c8a573e023768f786c97} 
+\index{Date@{Date}!operator$>$@{operator$>$}}
+\index{operator$>$@{operator$>$}!Date@{Date}}
+\doxysubsubsection{\texorpdfstring{operator$>$()}{operator>()}}
+{\footnotesize\ttfamily bool Date\+::operator$>$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_date}{Date}} \&}]{date }\end{DoxyParamCaption})}
+
+
+
+перегрузка оператора \textquotesingle{}\texorpdfstring{$>$}{>}\textquotesingle{} 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em bool} & \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Date.\+h\item 
+Date.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,31 @@
+\doxysection{Case.\+h}
+\hypertarget{_case_8h_source}{}\label{_case_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#ifndef\ \_CASE\_H\_}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#define\ \_CASE\_H\_}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}Date.h"{}}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_date}{Date}};}
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_case}{Case}}}
+\DoxyCodeLine{00015\ \{}
+\DoxyCodeLine{00016\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00017\ \ \ \ \ std::string\ \_title;\ \ \ \ \ \textcolor{comment}{//<\ \_title\ C++\ строка,\ название\ дела}}
+\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{class_date}{Date}}\ \_date;\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//<\ \_date\ объект\ класса\ Date,\ дата\ дела}}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{bool}\ \_isDone;\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//<\ \_isDone\ переменная\ типа\ bool,\ отметка\ о\ выполнении:\ true\ -\/\ дело\ выполнено,\ false\ -\/\ невыполнено\ }}
+\DoxyCodeLine{00020\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{class_case}{Case}}();}
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{class_case}{Case}}(std::string\ title,\ std::string\ date,\ \textcolor{keywordtype}{bool}\ markIsDone);}
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{class_case}{Case}}(std::string\ title,\ \mbox{\hyperlink{class_date}{Date}}\ date,\ \textcolor{keywordtype}{bool}\ markIsDone);}
+\DoxyCodeLine{00024\ \ \ \ \ std::string\ \mbox{\hyperlink{class_case_a731a12123afdbcb94bbf6a0ef81a5f16}{GetTitle}}();}
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{class_date}{Date}}\ \mbox{\hyperlink{class_case_ab9101d29b29e43e7b243fe464f068130}{GetDate}}();}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_case_a4195d2093ec6b5108d063315497be838}{PrintCase}}(\textcolor{keywordtype}{int}\ elLength);}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_case_a6938a746dbfd3031124cb566f5845bc2}{GetIsDoneMark}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00028\ \};}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ !\_CASE\_H\_}}
+\DoxyCodeLine{00031\ }
+
+\end{DoxyCode}

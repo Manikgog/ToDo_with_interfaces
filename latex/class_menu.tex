@@ -1,0 +1,70 @@
+\doxysection{Menu Class Reference}
+\hypertarget{class_menu}{}\label{class_menu}\index{Menu@{Menu}}
+Inheritance diagram for Menu\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_menu}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_menu_a85194356621d6e7a599cf319c32677c2}\label{class_menu_a85194356621d6e7a599cf319c32677c2} 
+{\bfseries Menu} (const std\+::string filename)
+\item 
+\Hypertarget{class_menu_a3b8b00715336601914f644ab6dbe17af}\label{class_menu_a3b8b00715336601914f644ab6dbe17af} 
+void {\bfseries Main\+Menu} ()
+\begin{DoxyCompactList}\small\item\em метод обеспечивающий текстовый интерфейс с пользователем \end{DoxyCompactList}\item 
+\Hypertarget{class_menu_a9f96135ad010db9e4a9c0c62dc608d04}\label{class_menu_a9f96135ad010db9e4a9c0c62dc608d04} 
+void {\bfseries Print\+Overdue\+Case\+List} ()
+\begin{DoxyCompactList}\small\item\em метод для вывода на экран списка просроченных дел \end{DoxyCompactList}\item 
+\Hypertarget{class_menu_aaa123e298df5399174ce1f3c19a008c1}\label{class_menu_aaa123e298df5399174ce1f3c19a008c1} 
+void {\bfseries Draw\+\_\+menu} (const int num\+Action)
+\begin{DoxyCompactList}\small\item\em метод для вывода на экран списка просроченных дел param\mbox{[}in\mbox{]} num\+Action целочисленная переменная для подстветки номера действия в меню \end{DoxyCompactList}\item 
+\Hypertarget{class_menu_a784186586e6542c26243c31d5cfdfca4}\label{class_menu_a784186586e6542c26243c31d5cfdfca4} 
+char {\bfseries input\+\_\+menu} (int low, int hi, int \&num\+Acion)
+\begin{DoxyCompactList}\small\item\em метод для преобразования нажатия на кнопки вверх и вниз в целочисленное значение типа char для последующей обработки param\mbox{[}in\mbox{]} low нижняя граница номера меню param\mbox{[}in\mbox{]} hi верхняя граница номера меню param\mbox{[}in\mbox{]} num\+Action текущий номер действия в меню param\mbox{[}out\mbox{]} возвращает результат в виде значения типа char \end{DoxyCompactList}\item 
+\Hypertarget{class_menu_a5c1b8369f89d65c98739b4090ff70397}\label{class_menu_a5c1b8369f89d65c98739b4090ff70397} 
+int {\bfseries Choose\+Case\+Menu} (int n\+Case)
+\begin{DoxyCompactList}\small\item\em метод для вывода на экран меню выбора дела подсветкой одного из пунктов param\mbox{[}in\mbox{]} n\+Case номер дела, которое будет подсвечено param\mbox{[}out\mbox{]} если возвращается 1, то это сигнал для вызвавшей функции вернуться в предыдущее меню, т.\+к. список дел пуст если же возвращается 0, то продолжается выбор дела \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_menu_a94b560ac8c70f00338dba09445cb5f4f}{Change\+Case\+Menu}} (int num\+Case)
+\begin{DoxyCompactList}\small\item\em метод для отображения меню выбора действия для изменения или удаления дела \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_menu_a33f068e51d17ab0de9e8a4f5889eaa46}{Mark\+Case\+Menu}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_menu_a94b560ac8c70f00338dba09445cb5f4f}\label{class_menu_a94b560ac8c70f00338dba09445cb5f4f} 
+\index{Menu@{Menu}!ChangeCaseMenu@{ChangeCaseMenu}}
+\index{ChangeCaseMenu@{ChangeCaseMenu}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{ChangeCaseMenu()}{ChangeCaseMenu()}}
+{\footnotesize\ttfamily int Menu\+::\+Change\+Case\+Menu (\begin{DoxyParamCaption}\item[{int}]{num\+Case }\end{DoxyParamCaption})}
+
+
+
+метод для отображения меню выбора действия для изменения или удаления дела 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em num\+Case} & номер дела \\
+\hline
+\mbox{\texttt{ out}}  & {\em номер} & пункта меню \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_menu_a33f068e51d17ab0de9e8a4f5889eaa46}\label{class_menu_a33f068e51d17ab0de9e8a4f5889eaa46} 
+\index{Menu@{Menu}!MarkCaseMenu@{MarkCaseMenu}}
+\index{MarkCaseMenu@{MarkCaseMenu}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{MarkCaseMenu()}{MarkCaseMenu()}}
+{\footnotesize\ttfamily int Menu\+::\+Mark\+Case\+Menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+метод для отметки дела как выполненное или нет 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em num\+Case} & номер дела \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Menu.\+h\item 
+Menu.\+cpp\end{DoxyCompactItemize}

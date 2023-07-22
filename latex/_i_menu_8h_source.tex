@@ -1,0 +1,23 @@
+\doxysection{IMenu.\+h}
+\hypertarget{_i_menu_8h_source}{}\label{_i_menu_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ \_IMENU\_H\_}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ \_IMENU\_H\_}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <objbase.h>}\ \ \ \textcolor{comment}{//\ Define\ interface.}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{interface\ }IMenu}
+\DoxyCodeLine{00007\ \{}
+\DoxyCodeLine{00008\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ MainMenu()\ =\ 0;}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ PrintOverdueCaseList()\ =\ 0;}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ Draw\_menu(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ numAction)\ =\ 0;}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{char}\ input\_menu(\textcolor{keywordtype}{int}\ low,\ \textcolor{keywordtype}{int}\ hi,\ \textcolor{keywordtype}{int}\&\ numAcion)\ =\ 0;}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ ChooseCaseMenu(\textcolor{keywordtype}{int}\ nCase)\ =\ 0;}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ ChangeCaseMenu(\textcolor{keywordtype}{int}\ numCase)\ =\ 0;}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ MarkCaseMenu()\ =\ 0;}
+\DoxyCodeLine{00015\ \};}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ !\_IMENU\_H\_}}
+\DoxyCodeLine{00018\ }
+
+\end{DoxyCode}
