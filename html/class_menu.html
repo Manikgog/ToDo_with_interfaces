@@ -108,15 +108,15 @@ char&#160;</td><td class="memItemRight" valign="bottom"><b>input_menu</b> (int l
 int&#160;</td><td class="memItemRight" valign="bottom"><b>ChooseCaseMenu</b> (int nCase)</td></tr>
 <tr class="memdesc:a5c1b8369f89d65c98739b4090ff70397"><td class="mdescLeft">&#160;</td><td class="mdescRight">метод для вывода на экран меню выбора дела подсветкой одного из пунктов param[in] nCase номер дела, которое будет подсвечено param[out] если возвращается 1, то это сигнал для вызвавшей функции вернуться в предыдущее меню, т.к. список дел пуст если же возвращается 0, то продолжается выбор дела <br /></td></tr>
 <tr class="separator:a5c1b8369f89d65c98739b4090ff70397"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a94b560ac8c70f00338dba09445cb5f4f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_menu.html#a94b560ac8c70f00338dba09445cb5f4f">ChangeCaseMenu</a> (int numCase)</td></tr>
-<tr class="memdesc:a94b560ac8c70f00338dba09445cb5f4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">метод для отображения меню выбора действия для изменения или удаления дела  <br /></td></tr>
-<tr class="separator:a94b560ac8c70f00338dba09445cb5f4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23cb77be52d35761fd52bd874011afca"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_menu.html#a23cb77be52d35761fd52bd874011afca">ChangeCaseMenu</a> (int numCase, int numAction)</td></tr>
+<tr class="memdesc:a23cb77be52d35761fd52bd874011afca"><td class="mdescLeft">&#160;</td><td class="mdescRight">метод для отображения меню выбора действия для изменения или удаления дела  <br /></td></tr>
+<tr class="separator:a23cb77be52d35761fd52bd874011afca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a33f068e51d17ab0de9e8a4f5889eaa46"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_menu.html#a33f068e51d17ab0de9e8a4f5889eaa46">MarkCaseMenu</a> ()</td></tr>
 <tr class="separator:a33f068e51d17ab0de9e8a4f5889eaa46"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a94b560ac8c70f00338dba09445cb5f4f" name="a94b560ac8c70f00338dba09445cb5f4f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a94b560ac8c70f00338dba09445cb5f4f">&#9670;&#160;</a></span>ChangeCaseMenu()</h2>
+<a id="a23cb77be52d35761fd52bd874011afca" name="a23cb77be52d35761fd52bd874011afca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23cb77be52d35761fd52bd874011afca">&#9670;&#160;</a></span>ChangeCaseMenu()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -125,8 +125,18 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>ChooseCaseMenu</b> (in
           <td class="memname">int Menu::ChangeCaseMenu </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>numCase</em></td><td>)</td>
+          <td class="paramname"><em>numCase</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>numAction</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">

@@ -6,23 +6,25 @@
 \DoxyCodeLine{00003\ }
 \DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
 \DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <objbase.h>}\ \ \ \textcolor{comment}{//\ Define\ interface.}}
-\DoxyCodeLine{00006\ }
-\DoxyCodeLine{00007\ \textcolor{keyword}{interface\ }IinputOutput}
-\DoxyCodeLine{00008\ \{}
-\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ AddingCase()\ =\ 0;}
-\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ CheckDate(std::string\ date)\ =\ 0;}
-\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ IsValidDate(\textcolor{keywordtype}{int}\ day,\ \textcolor{keywordtype}{int}\ month,\ \textcolor{keywordtype}{int}\ year)\ =\ 0;}
-\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ isLeapYear(\textcolor{keywordtype}{int}\ year)\ =\ 0;}
-\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ CheckOverdueCase(\textcolor{keywordtype}{int}\ day,\ \textcolor{keywordtype}{int}\ month,\ \textcolor{keywordtype}{int}\ year,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{short}\ currentYear,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{short}\ currentMonth,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{short}\ currentDay)\ \textcolor{keyword}{const}\ =\ 0;}
-\DoxyCodeLine{00014\ \ \ \ \ }
-\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ ChangeCase(\textcolor{keywordtype}{int}\ numCase,\ \textcolor{keywordtype}{int}\ num)\ =\ 0;}
-\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ ChangeTitle(\textcolor{keywordtype}{int}\ numCase)\ =\ 0;}
-\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ ChangeDate(\textcolor{keywordtype}{int}\ numCase)\ =\ 0;}
-\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ DeleteCase(\textcolor{keywordtype}{int}\ numCase)\ =\ 0;}
-\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ MarkCase(\textcolor{keywordtype}{int}\ numCase)\ =\ 0;}
-\DoxyCodeLine{00020\ \ \ \ \ }
-\DoxyCodeLine{00021\ \};}
-\DoxyCodeLine{00022\ }
-\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ !\_IINPUTOUTPUT\_H\_}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}CaseList.h"{}}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{interface\ }IinputOutput}
+\DoxyCodeLine{00009\ \{}
+\DoxyCodeLine{00010\ \ \ \ \ IinputOutput()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keyword}{virtual}\ \string~IinputOutput()\ \{\};}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ AddingCase()\ =\ 0;}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ CheckDate(std::string\ date)\ =\ 0;}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ IsValidDate(\textcolor{keywordtype}{int}\ day,\ \textcolor{keywordtype}{int}\ month,\ \textcolor{keywordtype}{int}\ year)\ =\ 0;}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ isLeapYear(\textcolor{keywordtype}{int}\ year)\ =\ 0;}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ CheckOverdueCase(\textcolor{keywordtype}{int}\ day,\ \textcolor{keywordtype}{int}\ month,\ \textcolor{keywordtype}{int}\ year,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{short}\ currentYear,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{short}\ currentMonth,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{short}\ currentDay)\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ ChangeTitle(\textcolor{keywordtype}{int}\ numCase)\ =\ 0;}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ ChangeDate(\textcolor{keywordtype}{int}\ numCase)\ =\ 0;}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ DeleteCase(\textcolor{keywordtype}{int}\ numCase)\ =\ 0;}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ ChangeMarkCase(\textcolor{keywordtype}{int}\ numCase,\ \textcolor{keywordtype}{int}\ mark)\ =\ 0;}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_case_list}{CaseList}}*\ GetCaseList()\ =\ 0;}
+\DoxyCodeLine{00022\ \ \ \ \ }
+\DoxyCodeLine{00023\ \};}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ !\_IINPUTOUTPUT\_H\_}}
 
 \end{DoxyCode}

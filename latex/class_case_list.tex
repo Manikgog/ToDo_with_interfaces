@@ -31,33 +31,80 @@ size\+\_\+t {\bfseries Size} () const
 void {\bfseries Sort\+Case\+List\+By\+Date} ()
 \begin{DoxyCompactList}\small\item\em метод для сортировки дел по дате \end{DoxyCompactList}\item 
 size\+\_\+t \mbox{\hyperlink{class_case_list_a939323e7b9a8b301cfd46bc35d9c025e}{Get\+Number\+Of\+Spaces}} (size\+\_\+t index)
-\item 
+\begin{DoxyCompactList}\small\item\em метод возвращает количество пробелов после названия дела(задачи) до начала даты для выравнивания по ширине. Количество пробелов получается путём вычитания длины самого длинного названия дела и дела, которое выводится на печать. \end{DoxyCompactList}\item 
 \Hypertarget{class_case_list_a804117689c217a70c676652ab2cec12e}\label{class_case_list_a804117689c217a70c676652ab2cec12e} 
 void {\bfseries Print\+Case\+List} ()
-\item 
-\Hypertarget{class_case_list_ae8fce8a5029c69ed1018d82a8ad07d1d}\label{class_case_list_ae8fce8a5029c69ed1018d82a8ad07d1d} 
-void {\bfseries Change\+Title} (const std\+::string \&title, size\+\_\+t index)
-\item 
-\Hypertarget{class_case_list_a0aae2b9a4d5a2bcefb228afb6ac81802}\label{class_case_list_a0aae2b9a4d5a2bcefb228afb6ac81802} 
-void {\bfseries Change\+Date} (const std\+::string \&title, size\+\_\+t index)
-\item 
-\Hypertarget{class_case_list_ac52e6585bef55485790852f63536b8b0}\label{class_case_list_ac52e6585bef55485790852f63536b8b0} 
-void {\bfseries Mark\+Is\+Done} (size\+\_\+t index)
-\item 
-\Hypertarget{class_case_list_af7ad449bfd987f0f0dcf2c82668214cb}\label{class_case_list_af7ad449bfd987f0f0dcf2c82668214cb} 
-void {\bfseries Mark\+Is\+Not\+Done} (size\+\_\+t index)
-\item 
+\begin{DoxyCompactList}\small\item\em метод вызывает метод Print\+Case(this-\/\texorpdfstring{$>$}{>}Get\+Number\+Of\+Spaces(i)) для каждого дела \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_case_list_ae8fce8a5029c69ed1018d82a8ad07d1d}{Change\+Title}} (const std\+::string \&title, size\+\_\+t index)
+\begin{DoxyCompactList}\small\item\em метод для изменения названия дела. Старое дело по полученному индексу удаляется, а новое вставляется на его место \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_case_list_a0aae2b9a4d5a2bcefb228afb6ac81802}{Change\+Date}} (const std\+::string \&title, size\+\_\+t index)
+\begin{DoxyCompactList}\small\item\em метод для изменения даты дела. Старое дело по полученному индексу удаляется, а новое вставляется на его место \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_case_list_ac52e6585bef55485790852f63536b8b0}{Mark\+Is\+Done}} (size\+\_\+t index)
+\begin{DoxyCompactList}\small\item\em метод для отметки о выполнении. Если отметка \"{}выполнено\"{} уже стоит, то ничего не меняется. Если же стоит отметка \"{}не выполнено\"{}, то ставится отметка \"{}выполнено\"{}. Старое дело по полученному индексу удаляется, а новое вставляется на его место. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_case_list_af7ad449bfd987f0f0dcf2c82668214cb}{Mark\+Is\+Not\+Done}} (size\+\_\+t index)
+\begin{DoxyCompactList}\small\item\em метод для отметки о не выполнении. Если отметка \"{}не выполнено\"{} уже стоит, то ничего не меняется. Если же стоит отметка \"{}выполнено\"{}, то ставится отметка \"{}не выполнено\"{}. Старое дело по полученному индексу удаляется, а новое вставляется на его место. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_case}{Case}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_case_list_a5fd6834607ab9111a9af4e17562e89a4}{Get\+Case}} (size\+\_\+t index) const
 \item 
 \Hypertarget{class_case_list_a60461f15081be549ec2cb19edc4aa2bc}\label{class_case_list_a60461f15081be549ec2cb19edc4aa2bc} 
 void {\bfseries Clear} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em метод для очистки всего списка дел \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 класс \doxylink{class_case_list}{Case\+List} Список дел 
 
+Класс \doxylink{class_case_list}{Case\+List} обеспечивает\+:
+\begin{DoxyItemize}
+\item хранение списка дел в векторе {\itshape case\+List}
+\item {\itshape хранение указателя на объект класса для чтения/записи списка дел в файл \+\_\+p\+\_\+\+IRead\+Write\+Binary\+File}
+\item {\itshape хранение имени файла \+\_\+filename}
+\item {\itshape определение длины максимальной строчки названия дела (size\+\_\+t Max\+Length())}
+\item {\itshape добавление дела (void Add\+Case(const \doxylink{class_case}{Case}\& case}))
+\item удаление дела (bool \doxylink{class_case_list_a143e08f504ed87fb628a428fbf52289e}{Delete\+Case(size\+\_\+t index)})
+\item определение количества дела в списке (size\+\_\+t \doxylink{class_case_list_a6c0cb5e825b325c0ba6ab3720086c229}{Size() const})
+\item сортировку списка по дате (void \doxylink{class_case_list_a7603b92e2b6fd2bcb26200f4d9e8fbcd}{Sort\+Case\+List\+By\+Date()})
+\item вывод на экран списка дел (void \doxylink{class_case_list_a804117689c217a70c676652ab2cec12e}{Print\+Case\+List()})
+\item изменение название существующего дела (void \doxylink{class_case_list_ae8fce8a5029c69ed1018d82a8ad07d1d}{Change\+Title(const std\+::string\& title, size\+\_\+t index)})
+\item изменение даты существующего дела (void \doxylink{class_case_list_a0aae2b9a4d5a2bcefb228afb6ac81802}{Change\+Date(const std\+::string\& title, size\+\_\+t index)})
+\item постановку отметки \"{}выполнено\"{} и \"{}не выполнено\"{} (void \doxylink{class_case_list_ac52e6585bef55485790852f63536b8b0}{Mark\+Is\+Done(size\+\_\+t index)} и void \doxylink{class_case_list_af7ad449bfd987f0f0dcf2c82668214cb}{Mark\+Is\+Not\+Done(size\+\_\+t index)})
+\item очистка всего списка дел (void \doxylink{class_case_list_a60461f15081be549ec2cb19edc4aa2bc}{Clear()}) 
+\end{DoxyItemize}
+
 \doxysubsection{Member Function Documentation}
+\Hypertarget{class_case_list_a0aae2b9a4d5a2bcefb228afb6ac81802}\label{class_case_list_a0aae2b9a4d5a2bcefb228afb6ac81802} 
+\index{CaseList@{CaseList}!ChangeDate@{ChangeDate}}
+\index{ChangeDate@{ChangeDate}!CaseList@{CaseList}}
+\doxysubsubsection{\texorpdfstring{ChangeDate()}{ChangeDate()}}
+{\footnotesize\ttfamily void Case\+List\+::\+Change\+Date (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{date,  }\item[{size\+\_\+t}]{index }\end{DoxyParamCaption})}
+
+
+
+метод для изменения даты дела. Старое дело по полученному индексу удаляется, а новое вставляется на его место 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em date} & новая дата дела \\
+\hline
+\mbox{\texttt{ in}}  & {\em index} & индекс дела(задачи) в векторе задач \+\_\+case\+List \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_case_list_ae8fce8a5029c69ed1018d82a8ad07d1d}\label{class_case_list_ae8fce8a5029c69ed1018d82a8ad07d1d} 
+\index{CaseList@{CaseList}!ChangeTitle@{ChangeTitle}}
+\index{ChangeTitle@{ChangeTitle}!CaseList@{CaseList}}
+\doxysubsubsection{\texorpdfstring{ChangeTitle()}{ChangeTitle()}}
+{\footnotesize\ttfamily void Case\+List\+::\+Change\+Title (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{title,  }\item[{size\+\_\+t}]{index }\end{DoxyParamCaption})}
+
+
+
+метод для изменения названия дела. Старое дело по полученному индексу удаляется, а новое вставляется на его место 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em title} & новое название дела \\
+\hline
+\mbox{\texttt{ in}}  & {\em index} & индекс дела(задачи) в векторе задач \+\_\+case\+List \\
+\hline
+\end{DoxyParams}
 \Hypertarget{class_case_list_a5fd6834607ab9111a9af4e17562e89a4}\label{class_case_list_a5fd6834607ab9111a9af4e17562e89a4} 
 \index{CaseList@{CaseList}!GetCase@{GetCase}}
 \index{GetCase@{GetCase}!CaseList@{CaseList}}
@@ -70,11 +117,45 @@ void {\bfseries Clear} ()
 \doxysubsubsection{\texorpdfstring{GetNumberOfSpaces()}{GetNumberOfSpaces()}}
 {\footnotesize\ttfamily size\+\_\+t Case\+List\+::\+Get\+Number\+Of\+Spaces (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{index }\end{DoxyParamCaption})}
 
+
+
 метод возвращает количество пробелов после названия дела(задачи) до начала даты для выравнивания по ширине. Количество пробелов получается путём вычитания длины самого длинного названия дела и дела, которое выводится на печать. 
+
+
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em index} & индекс дела(задачи) в векторе задач \+\_\+case\+List \\
 \hline
 \mbox{\texttt{ out}}  & {\em size\+\_\+t} & количество пробелов после выведенного на экран названия дела. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_case_list_ac52e6585bef55485790852f63536b8b0}\label{class_case_list_ac52e6585bef55485790852f63536b8b0} 
+\index{CaseList@{CaseList}!MarkIsDone@{MarkIsDone}}
+\index{MarkIsDone@{MarkIsDone}!CaseList@{CaseList}}
+\doxysubsubsection{\texorpdfstring{MarkIsDone()}{MarkIsDone()}}
+{\footnotesize\ttfamily void Case\+List\+::\+Mark\+Is\+Done (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{index }\end{DoxyParamCaption})}
+
+
+
+метод для отметки о выполнении. Если отметка \"{}выполнено\"{} уже стоит, то ничего не меняется. Если же стоит отметка \"{}не выполнено\"{}, то ставится отметка \"{}выполнено\"{}. Старое дело по полученному индексу удаляется, а новое вставляется на его место. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em index} & индекс дела(задачи) в векторе задач \+\_\+case\+List \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_case_list_af7ad449bfd987f0f0dcf2c82668214cb}\label{class_case_list_af7ad449bfd987f0f0dcf2c82668214cb} 
+\index{CaseList@{CaseList}!MarkIsNotDone@{MarkIsNotDone}}
+\index{MarkIsNotDone@{MarkIsNotDone}!CaseList@{CaseList}}
+\doxysubsubsection{\texorpdfstring{MarkIsNotDone()}{MarkIsNotDone()}}
+{\footnotesize\ttfamily void Case\+List\+::\+Mark\+Is\+Not\+Done (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{index }\end{DoxyParamCaption})}
+
+
+
+метод для отметки о не выполнении. Если отметка \"{}не выполнено\"{} уже стоит, то ничего не меняется. Если же стоит отметка \"{}выполнено\"{}, то ставится отметка \"{}не выполнено\"{}. Старое дело по полученному индексу удаляется, а новое вставляется на его место. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em index} & индекс дела(задачи) в векторе задач \+\_\+case\+List \\
 \hline
 \end{DoxyParams}
 

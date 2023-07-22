@@ -12,19 +12,19 @@
 \DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}InputOutput.h"{}}}
 \DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}IReadWriteFile.h"{}}}
 \DoxyCodeLine{00011\ }
-\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_menu}{Menu}}\ :\ IMenu}
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_menu}{Menu}}\ :\ \textcolor{keyword}{public}\ IMenu}
 \DoxyCodeLine{00013\ \{}
 \DoxyCodeLine{00014\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00015\ \ \ \ \ \mbox{\hyperlink{class_input_output}{InputOutput}}*\ p\_IO\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00015\ \ \ \ \ IinputOutput*\ p\_IO\ =\ \textcolor{keyword}{nullptr};\ \ \ }
 \DoxyCodeLine{00016\ \textcolor{keyword}{public}:}
 \DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{class_menu}{Menu}}(\textcolor{keyword}{const}\ std::string\ filename);}
-\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{class_menu}{\string~Menu}}();}
+\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{class_menu}{\string~Menu}}()\ \textcolor{keyword}{override};}
 \DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_menu_a3b8b00715336601914f644ab6dbe17af}{MainMenu}}();}
 \DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_menu_a9f96135ad010db9e4a9c0c62dc608d04}{PrintOverdueCaseList}}();}
 \DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_menu_aaa123e298df5399174ce1f3c19a008c1}{Draw\_menu}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ numAction);}
 \DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{class_menu_a784186586e6542c26243c31d5cfdfca4}{input\_menu}}(\textcolor{keywordtype}{int}\ low,\ \textcolor{keywordtype}{int}\ hi,\ \textcolor{keywordtype}{int}\&\ numAcion);}
 \DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_menu_a5c1b8369f89d65c98739b4090ff70397}{ChooseCaseMenu}}(\textcolor{keywordtype}{int}\ nCase);}
-\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_menu_a94b560ac8c70f00338dba09445cb5f4f}{ChangeCaseMenu}}(\textcolor{keywordtype}{int}\ numCase);}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_menu_a23cb77be52d35761fd52bd874011afca}{ChangeCaseMenu}}(\textcolor{keywordtype}{int}\ numCase,\ \textcolor{keywordtype}{int}\ numAction);}
 \DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_menu_a33f068e51d17ab0de9e8a4f5889eaa46}{MarkCaseMenu}}();}
 \DoxyCodeLine{00026\ \};}
 \DoxyCodeLine{00027\ }

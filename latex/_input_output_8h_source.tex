@@ -14,31 +14,28 @@
 \DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}IInputOutput.h"{}}}
 \DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}IReadWriteFile.h"{}}}
 \DoxyCodeLine{00013\ }
-\DoxyCodeLine{00024\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_input_output}{InputOutput}}\ :\ IinputOutput}
-\DoxyCodeLine{00025\ \{}
-\DoxyCodeLine{00026\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_input_output_a1dd21b19279a74cab56f3296c2355fbf}{AddingCase}}();}
-\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_input_output_ae3db347971e73670a5c17bd886ccd9c6}{CheckDate}}(std::string\ date);}
-\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_input_output_afbac94fbe3e71d2ed50642455141dbcd}{IsValidDate}}(\textcolor{keywordtype}{int}\ day,\ \textcolor{keywordtype}{int}\ month,\ \textcolor{keywordtype}{int}\ year);}
-\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_input_output_ae731d38deeadcafc707295c2f7f3f6f5}{isLeapYear}}(\textcolor{keywordtype}{int}\ year);}
-\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_input_output_a6397fe2713b5183184b8b0930cb7b9b0}{CheckOverdueCase}}(\textcolor{keywordtype}{int}\ day,\ \textcolor{keywordtype}{int}\ month,\ \textcolor{keywordtype}{int}\ year,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{short}\ currentYear,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{short}\ currentMonth,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{short}\ currentDay)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00022\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_input_output}{InputOutput}}\ :\ \textcolor{keyword}{public}\ IinputOutput}
+\DoxyCodeLine{00023\ \{}
+\DoxyCodeLine{00024\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{class_input_output}{InputOutput}}(\textcolor{keyword}{const}\ std::string\&\ filename);}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_input_output_a1dd21b19279a74cab56f3296c2355fbf}{AddingCase}}();}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_input_output_a6fcf7a1ccc0dbeb13799ac083561bbef}{ChangeTitle}}(\textcolor{keywordtype}{int}\ numCase);}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_input_output_a06e6feab3d5914bff353d597b22287f4}{ChangeDate}}(\textcolor{keywordtype}{int}\ numCase);}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_input_output_aa6d703ea323ebd2a4be4e3f576de4085}{DeleteCase}}(\textcolor{keywordtype}{int}\ numCase);}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_input_output_a083c9bc6731220260497c8339e70d341}{ChangeMarkCase}}(\textcolor{keywordtype}{int}\ numCase,\ \textcolor{keywordtype}{int}\ mark);}
+\DoxyCodeLine{00031\ \ \ \ \ \mbox{\hyperlink{class_case_list}{CaseList}}*\ GetCaseList();}
 \DoxyCodeLine{00032\ \ \ \ \ }
-\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_input_output_af575cb05e700da8f50594c7b255025cc}{ChangeCase}}(\textcolor{keywordtype}{int}\ numCase,\ \textcolor{keywordtype}{int}\ num);}
-\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_input_output_a6fcf7a1ccc0dbeb13799ac083561bbef}{ChangeTitle}}(\textcolor{keywordtype}{int}\ numCase);}
-\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_input_output_a06e6feab3d5914bff353d597b22287f4}{ChangeDate}}(\textcolor{keywordtype}{int}\ numCase);}
-\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_input_output_aa6d703ea323ebd2a4be4e3f576de4085}{DeleteCase}}(\textcolor{keywordtype}{int}\ numCase);}
-\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_input_output_a1ddfbb4dd2220beb84502c71136f239e}{MarkCase}}(\textcolor{keywordtype}{int}\ numCase);}
-\DoxyCodeLine{00038\ \ \ \ \ }
-\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{class_input_output}{InputOutput}}(\textcolor{keyword}{const}\ std::string\&\ filename);}
-\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{class_case_list}{CaseList}}*\ GetCaseList();}
-\DoxyCodeLine{00041\ \ \ \ \ }
-\DoxyCodeLine{00042\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00043\ \ \ \ \ }
-\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{class_case_list}{CaseList}}\ \_list;}
-\DoxyCodeLine{00045\ \};}
-\DoxyCodeLine{00046\ }
-\DoxyCodeLine{00047\ }
-\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ !}}
-\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00033\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00034\ \ \ \ \ }
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{class_case_list}{CaseList}}\ \_list;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//>\ класс\ CaseList\ для\ хранения\ и\ выполнения\ манипуляций\ со\ списком\ дел}}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{bool}\ CheckDate(std::string\ date);}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{bool}\ IsValidDate(\textcolor{keywordtype}{int}\ day,\ \textcolor{keywordtype}{int}\ month,\ \textcolor{keywordtype}{int}\ year);}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{bool}\ isLeapYear(\textcolor{keywordtype}{int}\ year);}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{bool}\ CheckOverdueCase(\textcolor{keywordtype}{int}\ day,\ \textcolor{keywordtype}{int}\ month,\ \textcolor{keywordtype}{int}\ year,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{short}\ currentYear,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{short}\ currentMonth,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{short}\ currentDay)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00040\ \};}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ !}}
+\DoxyCodeLine{00044\ }
 
 \end{DoxyCode}

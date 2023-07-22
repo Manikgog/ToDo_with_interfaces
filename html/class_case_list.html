@@ -109,31 +109,123 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>SortCaseListByDate</b
 <tr class="memdesc:a7603b92e2b6fd2bcb26200f4d9e8fbcd"><td class="mdescLeft">&#160;</td><td class="mdescRight">метод для сортировки дел по дате <br /></td></tr>
 <tr class="separator:a7603b92e2b6fd2bcb26200f4d9e8fbcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a939323e7b9a8b301cfd46bc35d9c025e"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_case_list.html#a939323e7b9a8b301cfd46bc35d9c025e">GetNumberOfSpaces</a> (size_t index)</td></tr>
+<tr class="memdesc:a939323e7b9a8b301cfd46bc35d9c025e"><td class="mdescLeft">&#160;</td><td class="mdescRight">метод возвращает количество пробелов после названия дела(задачи) до начала даты для выравнивания по ширине. Количество пробелов получается путём вычитания длины самого длинного названия дела и дела, которое выводится на печать.  <br /></td></tr>
 <tr class="separator:a939323e7b9a8b301cfd46bc35d9c025e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a804117689c217a70c676652ab2cec12e"><td class="memItemLeft" align="right" valign="top"><a id="a804117689c217a70c676652ab2cec12e" name="a804117689c217a70c676652ab2cec12e"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>PrintCaseList</b> ()</td></tr>
+<tr class="memdesc:a804117689c217a70c676652ab2cec12e"><td class="mdescLeft">&#160;</td><td class="mdescRight">метод вызывает метод PrintCase(this-&gt;GetNumberOfSpaces(i)) для каждого дела <br /></td></tr>
 <tr class="separator:a804117689c217a70c676652ab2cec12e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae8fce8a5029c69ed1018d82a8ad07d1d"><td class="memItemLeft" align="right" valign="top"><a id="ae8fce8a5029c69ed1018d82a8ad07d1d" name="ae8fce8a5029c69ed1018d82a8ad07d1d"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>ChangeTitle</b> (const std::string &amp;title, size_t index)</td></tr>
+<tr class="memitem:ae8fce8a5029c69ed1018d82a8ad07d1d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_case_list.html#ae8fce8a5029c69ed1018d82a8ad07d1d">ChangeTitle</a> (const std::string &amp;title, size_t index)</td></tr>
+<tr class="memdesc:ae8fce8a5029c69ed1018d82a8ad07d1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">метод для изменения названия дела. Старое дело по полученному индексу удаляется, а новое вставляется на его место  <br /></td></tr>
 <tr class="separator:ae8fce8a5029c69ed1018d82a8ad07d1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0aae2b9a4d5a2bcefb228afb6ac81802"><td class="memItemLeft" align="right" valign="top"><a id="a0aae2b9a4d5a2bcefb228afb6ac81802" name="a0aae2b9a4d5a2bcefb228afb6ac81802"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>ChangeDate</b> (const std::string &amp;title, size_t index)</td></tr>
+<tr class="memitem:a0aae2b9a4d5a2bcefb228afb6ac81802"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_case_list.html#a0aae2b9a4d5a2bcefb228afb6ac81802">ChangeDate</a> (const std::string &amp;title, size_t index)</td></tr>
+<tr class="memdesc:a0aae2b9a4d5a2bcefb228afb6ac81802"><td class="mdescLeft">&#160;</td><td class="mdescRight">метод для изменения даты дела. Старое дело по полученному индексу удаляется, а новое вставляется на его место  <br /></td></tr>
 <tr class="separator:a0aae2b9a4d5a2bcefb228afb6ac81802"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac52e6585bef55485790852f63536b8b0"><td class="memItemLeft" align="right" valign="top"><a id="ac52e6585bef55485790852f63536b8b0" name="ac52e6585bef55485790852f63536b8b0"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>MarkIsDone</b> (size_t index)</td></tr>
+<tr class="memitem:ac52e6585bef55485790852f63536b8b0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_case_list.html#ac52e6585bef55485790852f63536b8b0">MarkIsDone</a> (size_t index)</td></tr>
+<tr class="memdesc:ac52e6585bef55485790852f63536b8b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">метод для отметки о выполнении. Если отметка "выполнено" уже стоит, то ничего не меняется. Если же стоит отметка "не выполнено", то ставится отметка "выполнено". Старое дело по полученному индексу удаляется, а новое вставляется на его место.  <br /></td></tr>
 <tr class="separator:ac52e6585bef55485790852f63536b8b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af7ad449bfd987f0f0dcf2c82668214cb"><td class="memItemLeft" align="right" valign="top"><a id="af7ad449bfd987f0f0dcf2c82668214cb" name="af7ad449bfd987f0f0dcf2c82668214cb"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>MarkIsNotDone</b> (size_t index)</td></tr>
+<tr class="memitem:af7ad449bfd987f0f0dcf2c82668214cb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_case_list.html#af7ad449bfd987f0f0dcf2c82668214cb">MarkIsNotDone</a> (size_t index)</td></tr>
+<tr class="memdesc:af7ad449bfd987f0f0dcf2c82668214cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">метод для отметки о не выполнении. Если отметка "не выполнено" уже стоит, то ничего не меняется. Если же стоит отметка "выполнено", то ставится отметка "не выполнено". Старое дело по полученному индексу удаляется, а новое вставляется на его место.  <br /></td></tr>
 <tr class="separator:af7ad449bfd987f0f0dcf2c82668214cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5fd6834607ab9111a9af4e17562e89a4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_case.html">Case</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_case_list.html#a5fd6834607ab9111a9af4e17562e89a4">GetCase</a> (size_t index) const</td></tr>
 <tr class="separator:a5fd6834607ab9111a9af4e17562e89a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a60461f15081be549ec2cb19edc4aa2bc"><td class="memItemLeft" align="right" valign="top"><a id="a60461f15081be549ec2cb19edc4aa2bc" name="a60461f15081be549ec2cb19edc4aa2bc"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>Clear</b> ()</td></tr>
+<tr class="memdesc:a60461f15081be549ec2cb19edc4aa2bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">метод для очистки всего списка дел <br /></td></tr>
 <tr class="separator:a60461f15081be549ec2cb19edc4aa2bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>класс <a class="el" href="class_case_list.html" title="класс CaseList Список дел">CaseList</a> Список дел </p>
+<p>Класс <a class="el" href="class_case_list.html" title="класс CaseList Список дел">CaseList</a> обеспечивает:</p><ul>
+<li>хранение списка дел в векторе <em>caseList</em></li>
+<li><em>хранение указателя на объект класса для чтения/записи списка дел в файл _p_IReadWriteBinaryFile</em></li>
+<li><em>хранение имени файла _filename</em></li>
+<li><em>определение длины максимальной строчки названия дела (size_t MaxLength())</em></li>
+<li><em>добавление дела (void AddCase(const <a class="el" href="class_case.html" title="класс Case Дело">Case</a>&amp; case</em>))</li>
+<li>удаление дела (bool <a class="el" href="class_case_list.html#a143e08f504ed87fb628a428fbf52289e" title="метод для удаления дела по индексу param[in] index индекс дела в векторе дел param[out] результат уда...">DeleteCase(size_t index)</a>)</li>
+<li>определение количества дела в списке (size_t <a class="el" href="class_case_list.html#a6c0cb5e825b325c0ba6ab3720086c229" title="метод возвращающий количество дел в списке">Size() const</a>)</li>
+<li>сортировку списка по дате (void <a class="el" href="class_case_list.html#a7603b92e2b6fd2bcb26200f4d9e8fbcd" title="метод для сортировки дел по дате">SortCaseListByDate()</a>)</li>
+<li>вывод на экран списка дел (void <a class="el" href="class_case_list.html#a804117689c217a70c676652ab2cec12e" title="метод вызывает метод PrintCase(this-&gt;GetNumberOfSpaces(i)) для каждого дела">PrintCaseList()</a>)</li>
+<li>изменение название существующего дела (void <a class="el" href="class_case_list.html#ae8fce8a5029c69ed1018d82a8ad07d1d" title="метод для изменения названия дела. Старое дело по полученному индексу удаляется, а новое вставляется ...">ChangeTitle(const std::string&amp; title, size_t index)</a>)</li>
+<li>изменение даты существующего дела (void <a class="el" href="class_case_list.html#a0aae2b9a4d5a2bcefb228afb6ac81802" title="метод для изменения даты дела. Старое дело по полученному индексу удаляется, а новое вставляется на е...">ChangeDate(const std::string&amp; title, size_t index)</a>)</li>
+<li>постановку отметки "выполнено" и "не выполнено" (void <a class="el" href="class_case_list.html#ac52e6585bef55485790852f63536b8b0" title="метод для отметки о выполнении. Если отметка &quot;выполнено&quot; уже стоит, то ничего не меняется....">MarkIsDone(size_t index)</a> и void <a class="el" href="class_case_list.html#af7ad449bfd987f0f0dcf2c82668214cb" title="метод для отметки о не выполнении. Если отметка &quot;не выполнено&quot; уже стоит, то ничего не меняется....">MarkIsNotDone(size_t index)</a>)</li>
+<li>очистка всего списка дел (void <a class="el" href="class_case_list.html#a60461f15081be549ec2cb19edc4aa2bc" title="метод для очистки всего списка дел">Clear()</a>) </li>
+</ul>
 </div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a0aae2b9a4d5a2bcefb228afb6ac81802" name="a0aae2b9a4d5a2bcefb228afb6ac81802"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0aae2b9a4d5a2bcefb228afb6ac81802">&#9670;&#160;</a></span>ChangeDate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CaseList::ChangeDate </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>date</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>index</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>метод для изменения даты дела. Старое дело по полученному индексу удаляется, а новое вставляется на его место </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">date</td><td>новая дата дела </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">index</td><td>индекс дела(задачи) в векторе задач _caseList </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ae8fce8a5029c69ed1018d82a8ad07d1d" name="ae8fce8a5029c69ed1018d82a8ad07d1d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8fce8a5029c69ed1018d82a8ad07d1d">&#9670;&#160;</a></span>ChangeTitle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CaseList::ChangeTitle </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>title</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>index</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>метод для изменения названия дела. Старое дело по полученному индексу удаляется, а новое вставляется на его место </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">title</td><td>новое название дела </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">index</td><td>индекс дела(задачи) в векторе задач _caseList </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a5fd6834607ab9111a9af4e17562e89a4" name="a5fd6834607ab9111a9af4e17562e89a4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5fd6834607ab9111a9af4e17562e89a4">&#9670;&#160;</a></span>GetCase()</h2>
 
@@ -168,10 +260,64 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>Clear</b> ()</td></tr
         </tr>
       </table>
 </div><div class="memdoc">
-<p>метод возвращает количество пробелов после названия дела(задачи) до начала даты для выравнивания по ширине. Количество пробелов получается путём вычитания длины самого длинного названия дела и дела, которое выводится на печать. </p><dl class="params"><dt>Parameters</dt><dd>
+
+<p>метод возвращает количество пробелов после названия дела(задачи) до начала даты для выравнивания по ширине. Количество пробелов получается путём вычитания длины самого длинного названия дела и дела, которое выводится на печать. </p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">index</td><td>индекс дела(задачи) в векторе задач _caseList </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">size_t</td><td>количество пробелов после выведенного на экран названия дела. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ac52e6585bef55485790852f63536b8b0" name="ac52e6585bef55485790852f63536b8b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac52e6585bef55485790852f63536b8b0">&#9670;&#160;</a></span>MarkIsDone()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CaseList::MarkIsDone </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>метод для отметки о выполнении. Если отметка "выполнено" уже стоит, то ничего не меняется. Если же стоит отметка "не выполнено", то ставится отметка "выполнено". Старое дело по полученному индексу удаляется, а новое вставляется на его место. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">index</td><td>индекс дела(задачи) в векторе задач _caseList </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="af7ad449bfd987f0f0dcf2c82668214cb" name="af7ad449bfd987f0f0dcf2c82668214cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af7ad449bfd987f0f0dcf2c82668214cb">&#9670;&#160;</a></span>MarkIsNotDone()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CaseList::MarkIsNotDone </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>метод для отметки о не выполнении. Если отметка "не выполнено" уже стоит, то ничего не меняется. Если же стоит отметка "выполнено", то ставится отметка "не выполнено". Старое дело по полученному индексу удаляется, а новое вставляется на его место. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">index</td><td>индекс дела(задачи) в векторе задач _caseList </td></tr>
   </table>
   </dd>
 </dl>
