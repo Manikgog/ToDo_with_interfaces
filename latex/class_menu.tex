@@ -1,5 +1,14 @@
 \doxysection{Menu Class Reference}
 \hypertarget{class_menu}{}\label{class_menu}\index{Menu@{Menu}}
+
+
+класса \doxylink{class_menu}{Menu} служит для обеспечения графического интерфейса с пользователем через различные меню. Метод \doxylink{class_menu_a3b8b00715336601914f644ab6dbe17af}{Main\+Menu()} обеспечивает основной цикл программы. Метод \doxylink{class_menu_a9f96135ad010db9e4a9c0c62dc608d04}{Print\+Overdue\+Case\+List()} выводит на экран дела, у которых вышел срок выполнения. Метод \doxylink{class_menu_aaa123e298df5399174ce1f3c19a008c1}{Draw\+\_\+menu(const int num\+Action)} отображает основное меню. Метод input\+\_\+menu(int low, int hi, int\& num\+Acion) обеспечивает выбор пользователем того или иного пункта всех меню программы. Метод \doxylink{class_menu_a5c1b8369f89d65c98739b4090ff70397}{Choose\+Case\+Menu(int n\+Case)} отображает меню выбора дела для дальнейшей его обработки или удаления. Метод \doxylink{class_menu_a23cb77be52d35761fd52bd874011afca}{Change\+Case\+Menu(int num\+Case, int num\+Action)} отображает меню выбора действий, которые можно выполнить с выбранным в предыдущем меню делом. Метод \doxylink{class_menu_a33f068e51d17ab0de9e8a4f5889eaa46}{Mark\+Case\+Menu()} отображает меню для выбора отметки выполнено или не выполнено.  
+
+
+
+
+{\ttfamily \#include $<$Menu.\+h$>$}
+
 Inheritance diagram for Menu\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -21,8 +30,8 @@ void {\bfseries Print\+Overdue\+Case\+List} ()
 \Hypertarget{class_menu_aaa123e298df5399174ce1f3c19a008c1}\label{class_menu_aaa123e298df5399174ce1f3c19a008c1} 
 void {\bfseries Draw\+\_\+menu} (const int num\+Action)
 \begin{DoxyCompactList}\small\item\em метод для вывода на экран списка просроченных дел param\mbox{[}in\mbox{]} num\+Action целочисленная переменная для подстветки номера действия в меню \end{DoxyCompactList}\item 
-\Hypertarget{class_menu_a784186586e6542c26243c31d5cfdfca4}\label{class_menu_a784186586e6542c26243c31d5cfdfca4} 
-char {\bfseries input\+\_\+menu} (int low, int hi, int \&num\+Acion)
+\Hypertarget{class_menu_aad4bf23003650e1a7e6ed7b49e57ecb5}\label{class_menu_aad4bf23003650e1a7e6ed7b49e57ecb5} 
+char {\bfseries input\+\_\+menu} (int low, int hi, size\+\_\+t \&num\+Acion)
 \begin{DoxyCompactList}\small\item\em метод для преобразования нажатия на кнопки вверх и вниз в целочисленное значение типа char для последующей обработки param\mbox{[}in\mbox{]} low нижняя граница номера меню param\mbox{[}in\mbox{]} hi верхняя граница номера меню param\mbox{[}in\mbox{]} num\+Action текущий номер действия в меню param\mbox{[}out\mbox{]} возвращает результат в виде значения типа char \end{DoxyCompactList}\item 
 \Hypertarget{class_menu_a5c1b8369f89d65c98739b4090ff70397}\label{class_menu_a5c1b8369f89d65c98739b4090ff70397} 
 int {\bfseries Choose\+Case\+Menu} (int n\+Case)
@@ -32,6 +41,9 @@ int \mbox{\hyperlink{class_menu_a23cb77be52d35761fd52bd874011afca}{Change\+Case\
 int \mbox{\hyperlink{class_menu_a33f068e51d17ab0de9e8a4f5889eaa46}{Mark\+Case\+Menu}} ()
 \end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+класса \doxylink{class_menu}{Menu} служит для обеспечения графического интерфейса с пользователем через различные меню. Метод \doxylink{class_menu_a3b8b00715336601914f644ab6dbe17af}{Main\+Menu()} обеспечивает основной цикл программы. Метод \doxylink{class_menu_a9f96135ad010db9e4a9c0c62dc608d04}{Print\+Overdue\+Case\+List()} выводит на экран дела, у которых вышел срок выполнения. Метод \doxylink{class_menu_aaa123e298df5399174ce1f3c19a008c1}{Draw\+\_\+menu(const int num\+Action)} отображает основное меню. Метод input\+\_\+menu(int low, int hi, int\& num\+Acion) обеспечивает выбор пользователем того или иного пункта всех меню программы. Метод \doxylink{class_menu_a5c1b8369f89d65c98739b4090ff70397}{Choose\+Case\+Menu(int n\+Case)} отображает меню выбора дела для дальнейшей его обработки или удаления. Метод \doxylink{class_menu_a23cb77be52d35761fd52bd874011afca}{Change\+Case\+Menu(int num\+Case, int num\+Action)} отображает меню выбора действий, которые можно выполнить с выбранным в предыдущем меню делом. Метод \doxylink{class_menu_a33f068e51d17ab0de9e8a4f5889eaa46}{Mark\+Case\+Menu()} отображает меню для выбора отметки выполнено или не выполнено. 
 
 \doxysubsection{Member Function Documentation}
 \Hypertarget{class_menu_a23cb77be52d35761fd52bd874011afca}\label{class_menu_a23cb77be52d35761fd52bd874011afca} 

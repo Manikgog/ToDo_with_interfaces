@@ -16,8 +16,8 @@ Menu::~Menu()
 */
 void Menu::MainMenu()
 {
-	bool exit = true;	//< bool exit - variable-flag for exiting the program / переменна¤-флаг дл¤ выхода из программы
-	int numAction = 0;	//< int numAction - variable for storing an action option from the menu selected by the user
+	bool exit = true;		//< exit - variable-flag for exiting the program / переменна¤-флаг дл¤ выхода из программы
+	size_t numAction = 0;	//< numAction - variable for storing an action option from the menu selected by the user
 	
 	char answer{ 'н' };
 	do {
@@ -31,8 +31,8 @@ void Menu::MainMenu()
 			Draw_menu(numAction);
 		} while (input_menu(1, 5, numAction) != '\r');
 
-		int nCase = 0;				//< int nCase - variable for storing the number of the selected case / переменна¤ дл¤ хранени¤ номера выбранного дела
-		int nAction = 0;			//< int nAction - variable for storing the action number on the selected case / переменная для хранения номера действия над выбранным делом
+		size_t nCase = 0;			//<  nCase - variable for storing the number of the selected case / переменна¤ дл¤ хранени¤ номера выбранного дела
+		int nAction = 0;			//< nAction - variable for storing the action number on the selected case / переменная для хранения номера действия над выбранным делом
 		switch (numAction) {
 
 		case 1:
@@ -219,7 +219,7 @@ param[in] hi верхняя граница номера меню
 param[in] numAction текущий номер действия в меню
 param[out] возвращает результат в виде значения типа char
 */
-char Menu::input_menu(int low, int hi, int& numAcion) {
+char Menu::input_menu(int low, int hi, size_t& numAcion) {
 	int c1 = 0;
 	int c2 = 0;
 	int c = c1 + c2;
@@ -302,7 +302,7 @@ int Menu::ChooseCaseMenu(int nCase)
 int Menu::ChangeCaseMenu(int numCase, int numAction)
 {
 	if (numCase < 0) numCase = 0;
-	int num = 1;
+	size_t num = 1;
 	do {
 
 		switch (num)
@@ -365,7 +365,7 @@ int Menu::ChangeCaseMenu(int numCase, int numAction)
 */
 int Menu::MarkCaseMenu()
 {
-	int num = 3;
+	size_t num = 3;
 	do {
 		switch (num)
 		{
@@ -392,5 +392,6 @@ int Menu::MarkCaseMenu()
 			break;
 		}
 	} while (input_menu(1, 3, num) != '\r');
+
 	return num;
 }

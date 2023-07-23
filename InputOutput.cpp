@@ -234,7 +234,7 @@ bool InputOutput::CheckOverdueCase(int day, int month, int year, unsigned short 
 
 
 /*!
-метод для изменения названия дела
+\brief метод для изменения названия дела
 \param[in] numCase номер дела
 */
 void InputOutput::ChangeTitle(int numCase)
@@ -247,7 +247,7 @@ void InputOutput::ChangeTitle(int numCase)
 }
 
 /*!
-метод для изменения даты дела
+\brief метод для изменения даты дела
 \param[in] numCase номер дела
 */
 void InputOutput::ChangeDate(int numCase)
@@ -261,7 +261,7 @@ void InputOutput::ChangeDate(int numCase)
 }
 
 /*!
-метод для удаления дела из списка
+\brief метод для удаления дела из списка
 \param[in] numCase номер дела
 */
 void InputOutput::DeleteCase(int numCase)
@@ -287,7 +287,7 @@ void InputOutput::DeleteCase(int numCase)
 }
 
 /*!
-метод для отметки дела как выполненное или нет
+\brief метод для отметки дела как выполненное или нет
 \param[in] numCase номер дела
 */
 void InputOutput::ChangeMarkCase(int numCase, int mark)
@@ -299,6 +299,10 @@ void InputOutput::ChangeMarkCase(int numCase, int mark)
 	return;
 }
 
+/*!
+\brief метод возвращает указатель на объект класса CaseList
+\param[out] указатель на объект класса CaseList, который является полем InputOutput
+*/
 CaseList* InputOutput::GetCaseList()
 {
 	return &_list;

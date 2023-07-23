@@ -2,7 +2,7 @@
 
 
 Case::Case()
-	: _title(""), _date(Date()) {}
+	: _title(""), _date(Date()), _isDone(false){}
 
 Case::Case(std::string title, std::string date, bool markIsDone)
 	: _title(title), _date(Date(date)), _isDone(markIsDone) {}

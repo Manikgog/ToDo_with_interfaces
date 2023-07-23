@@ -98,15 +98,19 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>AddingCase</b> ()</td
 <tr class="memdesc:a1dd21b19279a74cab56f3296c2355fbf"><td class="mdescLeft">&#160;</td><td class="mdescRight">метод для обеспечения добавления нового дела в список <br /></td></tr>
 <tr class="separator:a1dd21b19279a74cab56f3296c2355fbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6fcf7a1ccc0dbeb13799ac083561bbef"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_input_output.html#a6fcf7a1ccc0dbeb13799ac083561bbef">ChangeTitle</a> (int numCase)</td></tr>
+<tr class="memdesc:a6fcf7a1ccc0dbeb13799ac083561bbef"><td class="mdescLeft">&#160;</td><td class="mdescRight">метод для изменения названия дела  <br /></td></tr>
 <tr class="separator:a6fcf7a1ccc0dbeb13799ac083561bbef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a06e6feab3d5914bff353d597b22287f4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_input_output.html#a06e6feab3d5914bff353d597b22287f4">ChangeDate</a> (int numCase)</td></tr>
+<tr class="memdesc:a06e6feab3d5914bff353d597b22287f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">метод для изменения даты дела  <br /></td></tr>
 <tr class="separator:a06e6feab3d5914bff353d597b22287f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa6d703ea323ebd2a4be4e3f576de4085"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_input_output.html#aa6d703ea323ebd2a4be4e3f576de4085">DeleteCase</a> (int numCase)</td></tr>
+<tr class="memdesc:aa6d703ea323ebd2a4be4e3f576de4085"><td class="mdescLeft">&#160;</td><td class="mdescRight">метод для удаления дела из списка  <br /></td></tr>
 <tr class="separator:aa6d703ea323ebd2a4be4e3f576de4085"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a083c9bc6731220260497c8339e70d341"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_input_output.html#a083c9bc6731220260497c8339e70d341">ChangeMarkCase</a> (int numCase, int mark)</td></tr>
+<tr class="memdesc:a083c9bc6731220260497c8339e70d341"><td class="mdescLeft">&#160;</td><td class="mdescRight">метод для отметки дела как выполненное или нет  <br /></td></tr>
 <tr class="separator:a083c9bc6731220260497c8339e70d341"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adccfb72d37270735af740b4487d72cf6"><td class="memItemLeft" align="right" valign="top"><a id="adccfb72d37270735af740b4487d72cf6" name="adccfb72d37270735af740b4487d72cf6"></a>
-<a class="el" href="class_case_list.html">CaseList</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>GetCaseList</b> ()</td></tr>
+<tr class="memitem:adccfb72d37270735af740b4487d72cf6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_case_list.html">CaseList</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_input_output.html#adccfb72d37270735af740b4487d72cf6">GetCaseList</a> ()</td></tr>
+<tr class="memdesc:adccfb72d37270735af740b4487d72cf6"><td class="mdescLeft">&#160;</td><td class="mdescRight">метод возвращает указатель на объект класса <a class="el" href="class_case_list.html" title="класс CaseList Список дел">CaseList</a>  <br /></td></tr>
 <tr class="separator:adccfb72d37270735af740b4487d72cf6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -114,8 +118,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>AddingCase</b> ()</td
 <ul>
 <li>добавление нового дела;</li>
 <li>сортировку списка по дате;</li>
-<li>выбор дела и его изменение или удаление;</li>
-<li>выход из программы. </li>
+<li>выбор дела и его изменение или удаление. </li>
 </ul>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a06e6feab3d5914bff353d597b22287f4" name="a06e6feab3d5914bff353d597b22287f4"></a>
@@ -133,7 +136,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>AddingCase</b> ()</td
         </tr>
       </table>
 </div><div class="memdoc">
-<p>метод для изменения даты дела </p><dl class="params"><dt>Parameters</dt><dd>
+
+<p>метод для изменения даты дела </p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">numCase</td><td>номер дела </td></tr>
   </table>
@@ -167,7 +172,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>AddingCase</b> ()</td
         </tr>
       </table>
 </div><div class="memdoc">
-<p>метод для отметки дела как выполненное или нет </p><dl class="params"><dt>Parameters</dt><dd>
+
+<p>метод для отметки дела как выполненное или нет </p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">numCase</td><td>номер дела </td></tr>
   </table>
@@ -191,7 +198,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>AddingCase</b> ()</td
         </tr>
       </table>
 </div><div class="memdoc">
-<p>метод для изменения названия дела </p><dl class="params"><dt>Parameters</dt><dd>
+
+<p>метод для изменения названия дела </p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">numCase</td><td>номер дела </td></tr>
   </table>
@@ -215,9 +224,36 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>AddingCase</b> ()</td
         </tr>
       </table>
 </div><div class="memdoc">
-<p>метод для удаления дела из списка </p><dl class="params"><dt>Parameters</dt><dd>
+
+<p>метод для удаления дела из списка </p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">numCase</td><td>номер дела </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="adccfb72d37270735af740b4487d72cf6" name="adccfb72d37270735af740b4487d72cf6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adccfb72d37270735af740b4487d72cf6">&#9670;&#160;</a></span>GetCaseList()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_case_list.html">CaseList</a> * InputOutput::GetCaseList </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>метод возвращает указатель на объект класса <a class="el" href="class_case_list.html" title="класс CaseList Список дел">CaseList</a> </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">указатель</td><td>на объект класса <a class="el" href="class_case_list.html" title="класс CaseList Список дел">CaseList</a>, который является полем <a class="el" href="class_input_output.html" title="класс, обеспечивает интерфейс с пользователем приложения Класс выполняет:">InputOutput</a> </td></tr>
   </table>
   </dd>
 </dl>

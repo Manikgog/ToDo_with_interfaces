@@ -25,16 +25,15 @@ Inheritance diagram for Input\+Output\+:\begin{figure}[H]
 void {\bfseries Adding\+Case} ()
 \begin{DoxyCompactList}\small\item\em метод для обеспечения добавления нового дела в список \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_input_output_a6fcf7a1ccc0dbeb13799ac083561bbef}{Change\+Title}} (int num\+Case)
-\item 
+\begin{DoxyCompactList}\small\item\em метод для изменения названия дела \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_input_output_a06e6feab3d5914bff353d597b22287f4}{Change\+Date}} (int num\+Case)
-\item 
+\begin{DoxyCompactList}\small\item\em метод для изменения даты дела \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_input_output_aa6d703ea323ebd2a4be4e3f576de4085}{Delete\+Case}} (int num\+Case)
-\item 
+\begin{DoxyCompactList}\small\item\em метод для удаления дела из списка \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_input_output_a083c9bc6731220260497c8339e70d341}{Change\+Mark\+Case}} (int num\+Case, int mark)
-\item 
-\Hypertarget{class_input_output_adccfb72d37270735af740b4487d72cf6}\label{class_input_output_adccfb72d37270735af740b4487d72cf6} 
-\mbox{\hyperlink{class_case_list}{Case\+List}} \texorpdfstring{$\ast$}{*} {\bfseries Get\+Case\+List} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em метод для отметки дела как выполненное или нет \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_case_list}{Case\+List}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_input_output_adccfb72d37270735af740b4487d72cf6}{Get\+Case\+List}} ()
+\begin{DoxyCompactList}\small\item\em метод возвращает указатель на объект класса \doxylink{class_case_list}{Case\+List} \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -44,8 +43,7 @@ void \mbox{\hyperlink{class_input_output_a083c9bc6731220260497c8339e70d341}{Chan
 \begin{DoxyItemize}
 \item добавление нового дела;
 \item сортировку списка по дате;
-\item выбор дела и его изменение или удаление;
-\item выход из программы. 
+\item выбор дела и его изменение или удаление. 
 \end{DoxyItemize}
 
 \doxysubsection{Member Function Documentation}
@@ -55,7 +53,11 @@ void \mbox{\hyperlink{class_input_output_a083c9bc6731220260497c8339e70d341}{Chan
 \doxysubsubsection{\texorpdfstring{ChangeDate()}{ChangeDate()}}
 {\footnotesize\ttfamily void Input\+Output\+::\+Change\+Date (\begin{DoxyParamCaption}\item[{int}]{num\+Case }\end{DoxyParamCaption})}
 
+
+
 метод для изменения даты дела 
+
+
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em num\+Case} & номер дела \\
 \hline
@@ -66,7 +68,11 @@ void \mbox{\hyperlink{class_input_output_a083c9bc6731220260497c8339e70d341}{Chan
 \doxysubsubsection{\texorpdfstring{ChangeMarkCase()}{ChangeMarkCase()}}
 {\footnotesize\ttfamily void Input\+Output\+::\+Change\+Mark\+Case (\begin{DoxyParamCaption}\item[{int}]{num\+Case,  }\item[{int}]{mark }\end{DoxyParamCaption})}
 
+
+
 метод для отметки дела как выполненное или нет 
+
+
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em num\+Case} & номер дела \\
 \hline
@@ -77,7 +83,11 @@ void \mbox{\hyperlink{class_input_output_a083c9bc6731220260497c8339e70d341}{Chan
 \doxysubsubsection{\texorpdfstring{ChangeTitle()}{ChangeTitle()}}
 {\footnotesize\ttfamily void Input\+Output\+::\+Change\+Title (\begin{DoxyParamCaption}\item[{int}]{num\+Case }\end{DoxyParamCaption})}
 
+
+
 метод для изменения названия дела 
+
+
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em num\+Case} & номер дела \\
 \hline
@@ -88,9 +98,28 @@ void \mbox{\hyperlink{class_input_output_a083c9bc6731220260497c8339e70d341}{Chan
 \doxysubsubsection{\texorpdfstring{DeleteCase()}{DeleteCase()}}
 {\footnotesize\ttfamily void Input\+Output\+::\+Delete\+Case (\begin{DoxyParamCaption}\item[{int}]{num\+Case }\end{DoxyParamCaption})}
 
+
+
 метод для удаления дела из списка 
+
+
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em num\+Case} & номер дела \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_input_output_adccfb72d37270735af740b4487d72cf6}\label{class_input_output_adccfb72d37270735af740b4487d72cf6} 
+\index{InputOutput@{InputOutput}!GetCaseList@{GetCaseList}}
+\index{GetCaseList@{GetCaseList}!InputOutput@{InputOutput}}
+\doxysubsubsection{\texorpdfstring{GetCaseList()}{GetCaseList()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_case_list}{Case\+List}} \texorpdfstring{$\ast$}{*} Input\+Output\+::\+Get\+Case\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+метод возвращает указатель на объект класса \doxylink{class_case_list}{Case\+List} 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em указатель} & на объект класса \doxylink{class_case_list}{Case\+List}, который является полем \doxylink{class_input_output}{Input\+Output} \\
 \hline
 \end{DoxyParams}
 
