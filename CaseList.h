@@ -22,6 +22,7 @@
 #include "IReadWriteFile.h"
 #include <vector>
 #include <memory>
+#include <algorithm>
 
 /*!
 \brief класс CaseList Список дел

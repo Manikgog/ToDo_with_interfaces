@@ -76,7 +76,7 @@ size_t CaseList::Size() const
 */
 void CaseList::SortCaseListByDate()
 {
-	for (size_t i = 0; i < this->Size() - 1; i++)
+	/*for (size_t i = 0; i < this->Size() - 1; i++)
 	{
 		std::unique_ptr<Case> tmp_case;
 		size_t index = i;
@@ -96,7 +96,13 @@ void CaseList::SortCaseListByDate()
 			_caseList.at(i).reset();
 			_caseList.at(i) = std::make_unique<Case>(*(tmp_case.release()));
 		}
-	}
+	}*/
+
+	std::sort(_caseList.begin(), _caseList.end(), [](const std::unique_ptr<Case>& lhs, const std::unique_ptr<Case>& rhs)
+		{
+			return lhs.get()->GetDate() < rhs.get()->GetDate();
+		});
+
 }
 
 /*!

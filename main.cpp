@@ -7,9 +7,8 @@
 #include "Menu.h"
 
 int main() {
-	setlocale(LC_ALL, "Russian");
-	SetConsoleCP(1251); // установка кодовой страницы на ввод текста
-	srand(time(NULL));
+	system("chcp 1251");
+	system("cls");
 
 	IMenu* p_IMenu = static_cast<Menu*>(new Menu("case.bin"));
 
