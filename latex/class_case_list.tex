@@ -37,7 +37,7 @@ void {\bfseries Print\+Case\+List} ()
 \begin{DoxyCompactList}\small\item\em метод вызывает метод Print\+Case(this-\/\texorpdfstring{$>$}{>}Get\+Number\+Of\+Spaces(i)) для каждого дела \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_case_list_ae8fce8a5029c69ed1018d82a8ad07d1d}{Change\+Title}} (const std\+::string \&title, size\+\_\+t index)
 \begin{DoxyCompactList}\small\item\em метод для изменения названия дела. Старое дело по полученному индексу удаляется, а новое вставляется на его место \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_case_list_a0aae2b9a4d5a2bcefb228afb6ac81802}{Change\+Date}} (const std\+::string \&title, size\+\_\+t index)
+void \mbox{\hyperlink{class_case_list_ab15df29a2c9e6b8df66ba146a2c7ebf0}{Change\+Date}} (\mbox{\hyperlink{class_date}{Date}} date, size\+\_\+t index)
 \begin{DoxyCompactList}\small\item\em метод для изменения даты дела. Старое дело по полученному индексу удаляется, а новое вставляется на его место \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_case_list_ac52e6585bef55485790852f63536b8b0}{Mark\+Is\+Done}} (size\+\_\+t index)
 \begin{DoxyCompactList}\small\item\em метод для отметки о выполнении. Если отметка \"{}выполнено\"{} уже стоит, то ничего не меняется. Если же стоит отметка \"{}не выполнено\"{}, то ставится отметка \"{}выполнено\"{}. Старое дело по полученному индексу удаляется, а новое вставляется на его место. \end{DoxyCompactList}\item 
@@ -65,17 +65,17 @@ void {\bfseries Clear} ()
 \item сортировку списка по дате (void \doxylink{class_case_list_a7603b92e2b6fd2bcb26200f4d9e8fbcd}{Sort\+Case\+List\+By\+Date()})
 \item вывод на экран списка дел (void \doxylink{class_case_list_a804117689c217a70c676652ab2cec12e}{Print\+Case\+List()})
 \item изменение название существующего дела (void \doxylink{class_case_list_ae8fce8a5029c69ed1018d82a8ad07d1d}{Change\+Title(const std\+::string\& title, size\+\_\+t index)})
-\item изменение даты существующего дела (void \doxylink{class_case_list_a0aae2b9a4d5a2bcefb228afb6ac81802}{Change\+Date(const std\+::string\& title, size\+\_\+t index)})
+\item изменение даты существующего дела (void Change\+Date(const std\+::string\& title, size\+\_\+t index))
 \item постановку отметки \"{}выполнено\"{} и \"{}не выполнено\"{} (void \doxylink{class_case_list_ac52e6585bef55485790852f63536b8b0}{Mark\+Is\+Done(size\+\_\+t index)} и void \doxylink{class_case_list_af7ad449bfd987f0f0dcf2c82668214cb}{Mark\+Is\+Not\+Done(size\+\_\+t index)})
 \item очистка всего списка дел (void \doxylink{class_case_list_a60461f15081be549ec2cb19edc4aa2bc}{Clear()}) 
 \end{DoxyItemize}
 
 \doxysubsection{Member Function Documentation}
-\Hypertarget{class_case_list_a0aae2b9a4d5a2bcefb228afb6ac81802}\label{class_case_list_a0aae2b9a4d5a2bcefb228afb6ac81802} 
+\Hypertarget{class_case_list_ab15df29a2c9e6b8df66ba146a2c7ebf0}\label{class_case_list_ab15df29a2c9e6b8df66ba146a2c7ebf0} 
 \index{CaseList@{CaseList}!ChangeDate@{ChangeDate}}
 \index{ChangeDate@{ChangeDate}!CaseList@{CaseList}}
 \doxysubsubsection{\texorpdfstring{ChangeDate()}{ChangeDate()}}
-{\footnotesize\ttfamily void Case\+List\+::\+Change\+Date (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{date,  }\item[{size\+\_\+t}]{index }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Case\+List\+::\+Change\+Date (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_date}{Date}}}]{date,  }\item[{size\+\_\+t}]{index }\end{DoxyParamCaption})}
 
 
 

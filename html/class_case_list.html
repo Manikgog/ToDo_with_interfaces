@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">ToDo list with interfaces<span id="projectnumber">&#160;1.0</span>
+   <div id="projectname">ToDo list with interfaces<span id="projectnumber">&#160;2.0</span>
    </div>
    <div id="projectbrief">Программа &quot;ТоDo&quot; (список дел) с использованием интерфейсов классов</div>
   </td>
@@ -118,9 +118,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>PrintCaseList</b> ()<
 <tr class="memitem:ae8fce8a5029c69ed1018d82a8ad07d1d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_case_list.html#ae8fce8a5029c69ed1018d82a8ad07d1d">ChangeTitle</a> (const std::string &amp;title, size_t index)</td></tr>
 <tr class="memdesc:ae8fce8a5029c69ed1018d82a8ad07d1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">метод для изменения названия дела. Старое дело по полученному индексу удаляется, а новое вставляется на его место  <br /></td></tr>
 <tr class="separator:ae8fce8a5029c69ed1018d82a8ad07d1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0aae2b9a4d5a2bcefb228afb6ac81802"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_case_list.html#a0aae2b9a4d5a2bcefb228afb6ac81802">ChangeDate</a> (const std::string &amp;title, size_t index)</td></tr>
-<tr class="memdesc:a0aae2b9a4d5a2bcefb228afb6ac81802"><td class="mdescLeft">&#160;</td><td class="mdescRight">метод для изменения даты дела. Старое дело по полученному индексу удаляется, а новое вставляется на его место  <br /></td></tr>
-<tr class="separator:a0aae2b9a4d5a2bcefb228afb6ac81802"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab15df29a2c9e6b8df66ba146a2c7ebf0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_case_list.html#ab15df29a2c9e6b8df66ba146a2c7ebf0">ChangeDate</a> (<a class="el" href="class_date.html">Date</a> date, size_t index)</td></tr>
+<tr class="memdesc:ab15df29a2c9e6b8df66ba146a2c7ebf0"><td class="mdescLeft">&#160;</td><td class="mdescRight">метод для изменения даты дела. Старое дело по полученному индексу удаляется, а новое вставляется на его место  <br /></td></tr>
+<tr class="separator:ab15df29a2c9e6b8df66ba146a2c7ebf0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac52e6585bef55485790852f63536b8b0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_case_list.html#ac52e6585bef55485790852f63536b8b0">MarkIsDone</a> (size_t index)</td></tr>
 <tr class="memdesc:ac52e6585bef55485790852f63536b8b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">метод для отметки о выполнении. Если отметка "выполнено" уже стоит, то ничего не меняется. Если же стоит отметка "не выполнено", то ставится отметка "выполнено". Старое дело по полученному индексу удаляется, а новое вставляется на его место.  <br /></td></tr>
 <tr class="separator:ac52e6585bef55485790852f63536b8b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -147,13 +147,13 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>Clear</b> ()</td></tr
 <li>сортировку списка по дате (void <a class="el" href="class_case_list.html#a7603b92e2b6fd2bcb26200f4d9e8fbcd" title="метод для сортировки дел по дате">SortCaseListByDate()</a>)</li>
 <li>вывод на экран списка дел (void <a class="el" href="class_case_list.html#a804117689c217a70c676652ab2cec12e" title="метод вызывает метод PrintCase(this-&gt;GetNumberOfSpaces(i)) для каждого дела">PrintCaseList()</a>)</li>
 <li>изменение название существующего дела (void <a class="el" href="class_case_list.html#ae8fce8a5029c69ed1018d82a8ad07d1d" title="метод для изменения названия дела. Старое дело по полученному индексу удаляется, а новое вставляется ...">ChangeTitle(const std::string&amp; title, size_t index)</a>)</li>
-<li>изменение даты существующего дела (void <a class="el" href="class_case_list.html#a0aae2b9a4d5a2bcefb228afb6ac81802" title="метод для изменения даты дела. Старое дело по полученному индексу удаляется, а новое вставляется на е...">ChangeDate(const std::string&amp; title, size_t index)</a>)</li>
+<li>изменение даты существующего дела (void ChangeDate(const std::string&amp; title, size_t index))</li>
 <li>постановку отметки "выполнено" и "не выполнено" (void <a class="el" href="class_case_list.html#ac52e6585bef55485790852f63536b8b0" title="метод для отметки о выполнении. Если отметка &quot;выполнено&quot; уже стоит, то ничего не меняется....">MarkIsDone(size_t index)</a> и void <a class="el" href="class_case_list.html#af7ad449bfd987f0f0dcf2c82668214cb" title="метод для отметки о не выполнении. Если отметка &quot;не выполнено&quot; уже стоит, то ничего не меняется....">MarkIsNotDone(size_t index)</a>)</li>
 <li>очистка всего списка дел (void <a class="el" href="class_case_list.html#a60461f15081be549ec2cb19edc4aa2bc" title="метод для очистки всего списка дел">Clear()</a>) </li>
 </ul>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a0aae2b9a4d5a2bcefb228afb6ac81802" name="a0aae2b9a4d5a2bcefb228afb6ac81802"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0aae2b9a4d5a2bcefb228afb6ac81802">&#9670;&#160;</a></span>ChangeDate()</h2>
+<a id="ab15df29a2c9e6b8df66ba146a2c7ebf0" name="ab15df29a2c9e6b8df66ba146a2c7ebf0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab15df29a2c9e6b8df66ba146a2c7ebf0">&#9670;&#160;</a></span>ChangeDate()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -161,7 +161,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>Clear</b> ()</td></tr
         <tr>
           <td class="memname">void CaseList::ChangeDate </td>
           <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="class_date.html">Date</a>&#160;</td>
           <td class="paramname"><em>date</em>, </td>
         </tr>
         <tr>

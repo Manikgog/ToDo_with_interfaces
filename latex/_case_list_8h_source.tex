@@ -10,33 +10,34 @@
 \DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ "{}IReadWriteFile.h"{}}}
 \DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <vector>}}
 \DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ <memory>}}
-\DoxyCodeLine{00025\ }
-\DoxyCodeLine{00029\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_case_list}{CaseList}}}
-\DoxyCodeLine{00030\ \{}
-\DoxyCodeLine{00031\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{class_i_read_write_binary_file}{IReadWriteBinaryFile}}*\ \_p\_IReadWriteBinaryFile\ =\ \textcolor{keyword}{nullptr};\ \ \ \ \textcolor{comment}{//>\ указатель\ на\ объект\ класса\ ReadWriteBinaryFile}}
-\DoxyCodeLine{00033\ \ \ \ \ std::vector<std::unique\_ptr<Case>>\ \_caseList;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//>\ вектор\ с\ умными\ указателями\ на\ экземпляры\ класса\ Case}}
-\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \_filename;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//>\ путь\ к\ файлу\ для\ хранения\ списка\ дел}}
-\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \_sizeTitle\ =\ 56;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//>\ максимальная\ длина\ названия\ дела}}
-\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ MaxLength();}
-\DoxyCodeLine{00037\ }
-\DoxyCodeLine{00038\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{class_case_list}{CaseList}}(\textcolor{keyword}{const}\ std::string\&\ filename);}
-\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{class_case_list_a6bd6b48f7e985ac64c6411aadec47e6c}{\string~CaseList}}();}
-\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_case_list_aa207556664021504d69ae19bf369d04d}{AddCase}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_case}{Case}}\&\ case\_);}
-\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_case_list_a143e08f504ed87fb628a428fbf52289e}{DeleteCase}}(\textcolor{keywordtype}{size\_t}\ index);}
-\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_case_list_a6c0cb5e825b325c0ba6ab3720086c229}{Size}}()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_case_list_a7603b92e2b6fd2bcb26200f4d9e8fbcd}{SortCaseListByDate}}();}
-\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_case_list_a939323e7b9a8b301cfd46bc35d9c025e}{GetNumberOfSpaces}}(\textcolor{keywordtype}{size\_t}\ index);}
-\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_case_list_a804117689c217a70c676652ab2cec12e}{PrintCaseList}}();}
-\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_case_list_ae8fce8a5029c69ed1018d82a8ad07d1d}{ChangeTitle}}(\textcolor{keyword}{const}\ std::string\&\ title,\ \textcolor{keywordtype}{size\_t}\ index);}
-\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_case_list_a0aae2b9a4d5a2bcefb228afb6ac81802}{ChangeDate}}(\textcolor{keyword}{const}\ std::string\&\ title,\ \textcolor{keywordtype}{size\_t}\ index);}
-\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_case_list_ac52e6585bef55485790852f63536b8b0}{MarkIsDone}}(\textcolor{keywordtype}{size\_t}\ index);}
-\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_case_list_af7ad449bfd987f0f0dcf2c82668214cb}{MarkIsNotDone}}(\textcolor{keywordtype}{size\_t}\ index);}
-\DoxyCodeLine{00051\ \ \ \ \ \mbox{\hyperlink{class_case}{Case}}*\ \mbox{\hyperlink{class_case_list_a5fd6834607ab9111a9af4e17562e89a4}{GetCase}}(\textcolor{keywordtype}{size\_t}\ index)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_case_list_a60461f15081be549ec2cb19edc4aa2bc}{Clear}}();}
-\DoxyCodeLine{00053\ \};}
-\DoxyCodeLine{00054\ }
-\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00030\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_case_list}{CaseList}}}
+\DoxyCodeLine{00031\ \{}
+\DoxyCodeLine{00032\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{class_i_read_write_binary_file}{IReadWriteBinaryFile}}*\ \_p\_IReadWriteBinaryFile\ =\ \textcolor{keyword}{nullptr};\ \ \ \ \textcolor{comment}{//>\ указатель\ на\ объект\ класса\ ReadWriteBinaryFile}}
+\DoxyCodeLine{00034\ \ \ \ \ std::vector<std::unique\_ptr<Case>>\ \_caseList;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//>\ вектор\ с\ умными\ указателями\ на\ экземпляры\ класса\ Case}}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \_filename;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//>\ путь\ к\ файлу\ для\ хранения\ списка\ дел}}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \_sizeTitle\ =\ 56;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//>\ максимальная\ длина\ названия\ дела}}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ MaxLength();}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{class_case_list}{CaseList}}(\textcolor{keyword}{const}\ std::string\&\ filename);}
+\DoxyCodeLine{00041\ \ \ \ \ \mbox{\hyperlink{class_case_list_a6bd6b48f7e985ac64c6411aadec47e6c}{\string~CaseList}}();}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_case_list_aa207556664021504d69ae19bf369d04d}{AddCase}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_case}{Case}}\&\ case\_);}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_case_list_a143e08f504ed87fb628a428fbf52289e}{DeleteCase}}(\textcolor{keywordtype}{size\_t}\ index);}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_case_list_a6c0cb5e825b325c0ba6ab3720086c229}{Size}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_case_list_a7603b92e2b6fd2bcb26200f4d9e8fbcd}{SortCaseListByDate}}();}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_case_list_a939323e7b9a8b301cfd46bc35d9c025e}{GetNumberOfSpaces}}(\textcolor{keywordtype}{size\_t}\ index);}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_case_list_a804117689c217a70c676652ab2cec12e}{PrintCaseList}}();}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_case_list_ae8fce8a5029c69ed1018d82a8ad07d1d}{ChangeTitle}}(\textcolor{keyword}{const}\ std::string\&\ title,\ \textcolor{keywordtype}{size\_t}\ index);}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_case_list_ab15df29a2c9e6b8df66ba146a2c7ebf0}{ChangeDate}}(\mbox{\hyperlink{class_date}{Date}}\ date,\ \textcolor{keywordtype}{size\_t}\ index);}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_case_list_ac52e6585bef55485790852f63536b8b0}{MarkIsDone}}(\textcolor{keywordtype}{size\_t}\ index);}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_case_list_af7ad449bfd987f0f0dcf2c82668214cb}{MarkIsNotDone}}(\textcolor{keywordtype}{size\_t}\ index);}
+\DoxyCodeLine{00052\ \ \ \ \ \mbox{\hyperlink{class_case}{Case}}*\ \mbox{\hyperlink{class_case_list_a5fd6834607ab9111a9af4e17562e89a4}{GetCase}}(\textcolor{keywordtype}{size\_t}\ index)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_case_list_a60461f15081be549ec2cb19edc4aa2bc}{Clear}}();}
+\DoxyCodeLine{00054\ \};}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

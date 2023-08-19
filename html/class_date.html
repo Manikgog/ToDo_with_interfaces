@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">ToDo list with interfaces<span id="projectnumber">&#160;1.0</span>
+   <div id="projectname">ToDo list with interfaces<span id="projectnumber">&#160;2.0</span>
    </div>
    <div id="projectbrief">Программа &quot;ТоDo&quot; (список дел) с использованием интерфейсов классов</div>
   </td>
@@ -113,6 +113,14 @@ Public Member Functions</h2></td></tr>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>PrintDate</b> ()</td></tr>
 <tr class="memdesc:aa7c63777f374a020c504b95fc645ccc9"><td class="mdescLeft">&#160;</td><td class="mdescRight">метод для вывода на экран даты <br /></td></tr>
 <tr class="separator:aa7c63777f374a020c504b95fc645ccc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a84bf16ab50a4b78f5c8ec8fb94308760"><td class="memItemLeft" align="right" valign="top"><a id="a84bf16ab50a4b78f5c8ec8fb94308760" name="a84bf16ab50a4b78f5c8ec8fb94308760"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>CheckDate</b> (std::string date)</td></tr>
+<tr class="memdesc:a84bf16ab50a4b78f5c8ec8fb94308760"><td class="mdescLeft">&#160;</td><td class="mdescRight">метод для проверки введенной даты param[in] date дата в виде С++-строки param[out] возвращает результат в виде булевого значения <br /></td></tr>
+<tr class="separator:a84bf16ab50a4b78f5c8ec8fb94308760"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1f8a1ac4a27b891fe739a1d56082d72"><td class="memItemLeft" align="right" valign="top"><a id="ab1f8a1ac4a27b891fe739a1d56082d72" name="ab1f8a1ac4a27b891fe739a1d56082d72"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>CheckOverdueCase</b> (int day, int month, int year, unsigned short currentYear, unsigned short currentMonth, unsigned short currentDay) const</td></tr>
+<tr class="memdesc:ab1f8a1ac4a27b891fe739a1d56082d72"><td class="mdescLeft">&#160;</td><td class="mdescRight">метод для проверки прошла ли введённая дата или нет param[in] day - введённый пользователем день param[in] month - введённый пользователем месяц param[in] year - введённый пользователем год param[in] currentDay - текущий день param[in] currentMonth - текущий месяц param[in] currentYear - текущий год param[out] true - дата не прошла, false - дата уже прошла <br /></td></tr>
+<tr class="separator:ab1f8a1ac4a27b891fe739a1d56082d72"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Класс <a class="el" href="class_date.html" title="Класс Date, который содержит поля день, месяц, год">Date</a>, который содержит поля день, месяц, год </p>

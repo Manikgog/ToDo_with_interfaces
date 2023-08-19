@@ -32,7 +32,13 @@ bool \mbox{\hyperlink{class_date_a556af85013c9c8a573e023768f786c97}{operator$>$}
 \begin{DoxyCompactList}\small\item\em перегрузка оператора \textquotesingle{}\texorpdfstring{$>$}{>}\textquotesingle{} \end{DoxyCompactList}\item 
 \Hypertarget{class_date_aa7c63777f374a020c504b95fc645ccc9}\label{class_date_aa7c63777f374a020c504b95fc645ccc9} 
 void {\bfseries Print\+Date} ()
-\begin{DoxyCompactList}\small\item\em метод для вывода на экран даты \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em метод для вывода на экран даты \end{DoxyCompactList}\item 
+\Hypertarget{class_date_a84bf16ab50a4b78f5c8ec8fb94308760}\label{class_date_a84bf16ab50a4b78f5c8ec8fb94308760} 
+bool {\bfseries Check\+Date} (std\+::string date)
+\begin{DoxyCompactList}\small\item\em метод для проверки введенной даты param\mbox{[}in\mbox{]} date дата в виде С++-\/строки param\mbox{[}out\mbox{]} возвращает результат в виде булевого значения \end{DoxyCompactList}\item 
+\Hypertarget{class_date_ab1f8a1ac4a27b891fe739a1d56082d72}\label{class_date_ab1f8a1ac4a27b891fe739a1d56082d72} 
+bool {\bfseries Check\+Overdue\+Case} (int day, int month, int year, unsigned short current\+Year, unsigned short current\+Month, unsigned short current\+Day) const
+\begin{DoxyCompactList}\small\item\em метод для проверки прошла ли введённая дата или нет param\mbox{[}in\mbox{]} day -\/ введённый пользователем день param\mbox{[}in\mbox{]} month -\/ введённый пользователем месяц param\mbox{[}in\mbox{]} year -\/ введённый пользователем год param\mbox{[}in\mbox{]} current\+Day -\/ текущий день param\mbox{[}in\mbox{]} current\+Month -\/ текущий месяц param\mbox{[}in\mbox{]} current\+Year -\/ текущий год param\mbox{[}out\mbox{]} true -\/ дата не прошла, false -\/ дата уже прошла \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
