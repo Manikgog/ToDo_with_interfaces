@@ -59,7 +59,8 @@ void InputOutput::ChangeDate(int numCase)
 		std::cout << "\x1b[33mВведите дату в формате ДД.ММ.ГГГГ -> \x1b[0m";
 		std::getline(std::cin, str_date);
 	} while (date.CheckDate(str_date) == false);
-	_list.ChangeDate(date, numCase);
+	Date date_(str_date);
+	_list.ChangeDate(date_, numCase);
 }
 
 /*!

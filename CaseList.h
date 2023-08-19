@@ -46,7 +46,7 @@ public:
 	size_t GetNumberOfSpaces(size_t index);
 	void PrintCaseList();
 	void ChangeTitle(const std::string& title, size_t index);
-	void ChangeDate(const Date& title, size_t index);
+	void ChangeDate(Date date, size_t index);
 	void MarkIsDone(size_t index);
 	void MarkIsNotDone(size_t index);
 	Case* GetCase(size_t index) const;
