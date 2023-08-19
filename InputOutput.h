@@ -30,12 +30,8 @@ public:
 	CaseList* GetCaseList();
 	
 private:
-	
 	CaseList _list;						//> класс CaseList для хранения и выполнения манипуляций со списком дел
-	bool CheckDate(std::string date);
-	bool IsValidDate(int day, int month, int year);
-	bool isLeapYear(int year);
-	bool CheckOverdueCase(int day, int month, int year, unsigned short currentYear, unsigned short currentMonth, unsigned short currentDay) const;
+		
 };
 
 

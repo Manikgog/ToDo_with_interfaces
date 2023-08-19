@@ -23,7 +23,7 @@ public:
 	Case(std::string title, Date date, bool markIsDone);
 	std::string GetTitle();
 	Date GetDate();
-	void PrintCase(int elLength);
+	void PrintCase(size_t elLength);
 	bool GetIsDoneMark() const;
 };
 

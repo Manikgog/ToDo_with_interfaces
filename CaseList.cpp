@@ -122,7 +122,6 @@ size_t CaseList::GetNumberOfSpaces(size_t index)
 */
 void CaseList::PrintCaseList()
 {
-
 	for (size_t i = 0; i < this->Size(); i++)
 	{
 		_caseList.at(i)->PrintCase(this->GetNumberOfSpaces(i));
@@ -150,7 +149,7 @@ void CaseList::ChangeTitle(const std::string& title, size_t index)
 \param[in] date новая дата дела
 \param[in] index индекс дела(задачи) в векторе задач _caseList
 */
-void CaseList::ChangeDate(const std::string& date, size_t index)
+void CaseList::ChangeDate(const Date& date, size_t index)
 {
 	std::string title = _caseList.at(index)->GetTitle();
 	Date newDate(date);

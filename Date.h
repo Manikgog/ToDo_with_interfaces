@@ -17,7 +17,10 @@ private:
 	int _day;
 	int _month;
 	int _year;
+	bool isLeapYear(int year);
+	bool IsValidDate(int day, int month, int year);
 	std::string NumberToString(int month);
+	
 public:
 	Date();
 	Date(int day, int month, int year);
@@ -29,6 +32,9 @@ public:
 	bool operator==(const Date& date);
 	bool operator>(const Date& date);
 	void PrintDate();
+	bool CheckDate(std::string date);
+	bool CheckOverdueCase(int day, int month, int year, unsigned short currentYear, unsigned short currentMonth, unsigned short currentDay) const;
+	
 };
 
 #endif

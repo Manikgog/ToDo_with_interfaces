@@ -1,9 +1,25 @@
 ﻿#include <memory>
+#include <Windows.h>
 #include "Menu.h"
+
+void Col(int bg, int txt)
+{
+	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+	SetConsoleTextAttribute(hConsole, (WORD)((bg << 4) | txt));
+}
+
+void setcur(int x, int y)
+{
+	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+	COORD coord;
+	coord.X = x;
+	coord.Y = y;
+	SetConsoleCursorPosition(hConsole, coord);
+}
 
 Menu::Menu(const std::string filename) : IMenu()
 {
-	p_IO = static_cast<InputOutput*>(new InputOutput(filename));	//> указатель на объект класса InputOutput
+	p_IO = new InputOutput(filename);	//> указатель на объект класса InputOutput
 }
 
 Menu::~Menu()
@@ -11,43 +27,52 @@ Menu::~Menu()
 	delete p_IO;
 }
 
+
 /*!
 \brief метод обеспечивающий текстовый интерфейс с пользователем
 */
 void Menu::MainMenu()
 {
 	bool exit = true;		//< exit - variable-flag for exiting the program / переменна¤-флаг дл¤ выхода из программы
-	size_t numAction = 0;	//< numAction - variable for storing an action option from the menu selected by the user
-	
+	volatile size_t numAction = 0;	//< numAction - variable for storing an action option from the menu selected by the user
+	std::cout << "\x1b[32mПрограмма дл¤ создания списка запланированных дел.\x1b[0m\n";
+	if (!p_IO->GetCaseList()->Size())
+	{
+		PrintOverdueCaseList();
+		system("pause");
+	}
 	char answer{ 'н' };
 	do {
-
-
+		system("cls");
+		std::cout << "\x1b[32mПрограмма дл¤ создания списка запланированных дел.\x1b[0m\n";
+		Draw_menu(numAction);
+		int prevAction = numAction;
 		do {
-			system("cls");
-			std::cout << "\x1b[32mПрограмма дл¤ создания списка запланированных дел.\x1b[0m\n";
-			PrintOverdueCaseList();
-
-			Draw_menu(numAction);
+			Variant_Menu(numAction, prevAction);
+			prevAction = numAction;
+			
 		} while (input_menu(1, 5, numAction) != '\r');
 
-		size_t nCase = 0;			//<  nCase - variable for storing the number of the selected case / переменна¤ дл¤ хранени¤ номера выбранного дела
+		volatile size_t nCase = 0;			//<  nCase - variable for storing the number of the selected case / переменна¤ дл¤ хранени¤ номера выбранного дела
 		int nAction = 0;			//< nAction - variable for storing the action number on the selected case / переменная для хранения номера действия над выбранным делом
 		switch (numAction) {
 
 		case 1:
-			
+			system("cls");
 			p_IO->AddingCase();//< AddingCase() - adding a case to the list / добавление дела в список
 
 			break;
 		case 2:
 			do {
+				system("cls");
+				DrawChooseCaseMenu();
+				int prevCase = nCase;
 				do {
-					system("cls");
-					if (1 == ChooseCaseMenu(nCase)) { //< если список пуст
+					if (1 == ChooseCaseMenu(nCase, prevCase)) { //< если список пуст
 						numAction = 1;
 						break;
 					}
+					prevCase = nCase;
 				} while ('\r' != input_menu(0, p_IO->GetCaseList()->Size(), nCase));
 
 				system("cls");
@@ -60,7 +85,12 @@ void Menu::MainMenu()
 				}
 				//< choosing an action with a selected case
 				//< выбор действи¤ с выбранным делом
-				numAction = ChangeCaseMenu(nCase, numAction);
+				DrawChangeCaseMenu(nCase);
+				do {
+					ChangeCaseMenu(numAction, prevAction);
+					prevAction = numAction;
+				} while (input_menu(1, 5, numAction) != '\r');
+				system("cls");
 				if (numAction == 1)
 				{
 					p_IO->ChangeTitle(nCase);
@@ -79,7 +109,7 @@ void Menu::MainMenu()
 				}
 				
 					
-				system("pause");
+				//system("pause");
 			} while (nAction == 1);
 
 			system("cls");
@@ -121,6 +151,7 @@ void Menu::MainMenu()
 }
 
 
+
 /*!
 \brief метод для вывода на экран списка просроченных дел
 */
@@ -145,6 +176,7 @@ void Menu::PrintOverdueCaseList()
 			std::cout << std::endl;
 		}
 	}
+	return;
 }
 
 
@@ -154,62 +186,71 @@ void Menu::PrintOverdueCaseList()
 param[in] numAction целочисленная переменная для подстветки номера действия в меню
 */
 void Menu::Draw_menu(const int numAction) {
-	switch (numAction) {
+	Col(0, 15);
+	setcur(0, 2); std::cout << "Варианты действий:";
+	setcur(0, 3); std::cout << "Добавление нового дела.";
+	setcur(0, 4); std::cout << "Выбор дела.";
+	setcur(0, 5); std::cout << "Сортировка списка.";
+	setcur(0, 6); std::cout << "Очистка всего списка дел.";
+	setcur(0, 7); std::cout << "Выход из программы.";
+	setcur(0, 8); std::cout << "Для выбора пункта меню пользуйтесь стрелками вверх и вниз на клавиатуре и кнопкой ВВОД.";
+	return;
+}
 
-	case 1:
-		std::cout << "\n\x1b[33mВарианты действий:\x1b[0m\n\x1b[36mДобавление нового дела.\x1b[0m\n\
-Выбор дела.\n\
-Очистка всего списка дел.\n\
-Сортировка списка.\n\
-Выход из программы.\n\
-\n\
-Для выбора пункта меню пользуйтесь стрелками вверх и вниз на клавиатуре и кнопкой ВВОД.\n";
-		break;
-	case 2:
-		std::cout << "\n\x1b[33mВарианты действий:\x1b[0m\nДобавление нового дела.\n\
-\x1b[36mВыбор дела.\x1b[0m\n\
-Очистка всего списка дел.\n\
-Сортировка списка.\n\
-Выход из программы.\n\
-\n\
-Для выбора пункта меню пользуйтесь стрелками вверх и вниз на клавиатуре и кнопкой ВВОД.\n";
-		break;
-	case 3:
-		std::cout << "\n\x1b[33mВарианты действий:\x1b[0m\nДобавление нового дела.\n\
-Выбор дела.\n\
-\x1b[36mОчистка всего списка дел.\x1b[0m\n\
-Сортировка списка.\n\
-Выход из программы.\n\
-\n\
-Для выбора пункта меню пользуйтесь стрелками вверх и вниз на клавиатуре и кнопкой ВВОД.\n";
-		break;
-	case 4:
-		std::cout << "\n\x1b[33mВарианты действий:\x1b[0m\nДобавление нового дела.\n\
-Выбор дела.\n\
-Очистка всего списка дел.\n\
-\x1b[36mСортировка списка.\x1b[0m\n\
-Выход из программы.\n\
-\n\
-Для выбора пункта меню пользуйтесь стрелками вверх и вниз на клавиатуре и кнопкой ВВОД.\n";
-		break;
-	case 5:
-		std::cout << "\n\x1b[33mВарианты действий:\x1b[0m\nДобавление нового дела.\n\
-Выбор дела.\n\
-Очистка всего списка дел.\n\
-Сортировка списка.\n\
-\x1b[36mВыход из программы.\x1b[0m\n\
-\n\
-Для выбора пункта меню пользуйтесь стрелками вверх и вниз на клавиатуре и кнопкой ВВОД.\n";
-		break;
-	default:
-		std::cout << "\n\x1b[33mВарианты действий:\x1b[0m\nДобавление нового дела.\n\
-Выбор дела.\n\
-Очистка всего списка дел.\n\
-Сортировка списка.\n\
-Выход из программы.\n\
-\n\
-Для выбора пункта меню пользуйтесь стрелками вверх и вниз на клавиатуре и кнопкой ВВОД.\n";
+void Menu::Variant_Menu(int numCase, int prevCase)
+{
+	if (prevCase == 1)
+	{
+		Col(0, 15);
+		setcur(0, prevCase + 2); std::cout << "Добавление нового дела.";
 	}
+	else if (prevCase == 2)
+	{
+		Col(0, 15);
+		setcur(0, prevCase + 2); std::cout << "Выбор дела.";
+	}
+	else if (prevCase == 3)
+	{
+		Col(0, 15);
+		setcur(0, prevCase + 2); std::cout << "Сортировка списка.";
+	}
+	else if (prevCase == 4)
+	{
+		Col(0, 15);
+		setcur(0, prevCase + 2); std::cout << "Очистка всего списка дел.";
+	}
+	else if (prevCase == 5)
+	{
+		Col(0, 15);
+		setcur(0, prevCase + 2); std::cout << "Выход из программы.";
+	}
+
+	if (numCase == 1)
+	{
+		Col(0, 9);
+		setcur(0, numCase + 2); std::cout << "Добавление нового дела.";
+	}
+	else if (numCase == 2)
+	{
+		Col(0, 9);
+		setcur(0, numCase + 2); std::cout << "Выбор дела.";
+	}
+	else if (numCase == 3)
+	{
+		Col(0, 9);
+		setcur(0, numCase + 2); std::cout << "Сортировка списка.";
+	}
+	else if (numCase == 4)
+	{
+		Col(0, 9);
+		setcur(0, numCase + 2); std::cout << "Очистка всего списка дел.";
+	}
+	else if (numCase == 5)
+	{
+		Col(0, 9);
+		setcur(0, numCase + 2); std::cout << "Выход из программы.";
+	}
+	
 }
 
 /*!
@@ -219,7 +260,7 @@ param[in] hi верхняя граница номера меню
 param[in] numAction текущий номер действия в меню
 param[out] возвращает результат в виде значения типа char
 */
-char Menu::input_menu(int low, int hi, size_t& numAcion) {
+char Menu::input_menu(int low, int hi, volatile size_t& numAcion) {
 	int c1 = 0;
 	int c2 = 0;
 	int c = c1 + c2;
@@ -258,40 +299,92 @@ param[in] nCase номер дела, которое будет подсвече�
 param[out] если возвращается 1, то это сигнал для вызвавшей функции вернуться в предыдущее меню, т.к. список дел пуст
 			если же возвращается 0, то продолжается выбор дела
 */
-int Menu::ChooseCaseMenu(int nCase)
+int Menu::ChooseCaseMenu(int nCase, int prevCase)
 {
 	size_t listSize = p_IO->GetCaseList()->Size();
 	if (listSize == 0) {
-		std::cout << "Запланированных дел нет. Список пуст.\n";
+		Col(0, 11);
+		setcur(0, 0); std::cout << "Запланированных дел нет. Список пуст.";
 		return 1;
 	}
-	else {
-
-
-		std::cout << "\x1b[33mСписок запланированных дел:\x1b[0m\n";
+	else
+	{
+		Col(0, 11);
+		setcur(0, 0); std::cout << "Список запланированных дел:";
 		if (nCase >= 0 && nCase < listSize) {
 			for (int i = 0; i < listSize; ++i) {
 				if (nCase == i)
 				{
-					std::cout << "\x1b[36m";
+					Col(0, 9);
+					setcur(0, nCase + 1);
 					p_IO->GetCaseList()->GetCase(i)->PrintCase(p_IO->GetCaseList()->GetNumberOfSpaces(i));
-					std::cout << "\x1b[0m";
 				}
-				else
+				if (prevCase == i)
+				{
+					Col(0, 15);
+					setcur(0, prevCase + 1);
 					p_IO->GetCaseList()->GetCase(i)->PrintCase(p_IO->GetCaseList()->GetNumberOfSpaces(i));
+				}
 				std::cout << std::endl;
 			}
-			std::cout << "Назад\n";
+			Col(0, 15);
+			setcur(0, listSize + 1); std::cout << "Назад\n";
+
 		}
-		else {
-			p_IO->GetCaseList()->PrintCaseList();
-			std::cout << "\x1b[36mНазад\x1b[0m\n";
+		if (nCase == listSize)
+		{
+			Col(0, 15);
+			setcur(0, listSize);
+			p_IO->GetCaseList()->GetCase(listSize-1)->PrintCase(p_IO->GetCaseList()->GetNumberOfSpaces(listSize - 1));
+			Col(0, 9);
+			setcur(0, listSize + 1); std::cout << "Назад\n";
 		}
 	}
 	return 0;
 }
 
 
+int Menu::DrawChooseCaseMenu()
+{
+	size_t listSize = p_IO->GetCaseList()->Size();
+	if (listSize == 0) {
+		Col(0, 11);
+		setcur(0, 0); std::cout << "Запланированных дел нет. Список пуст.";
+		return 1;
+	}
+	else
+	{
+		Col(0, 11);
+		setcur(0, 0); std::cout << "Список запланированных дел:";
+		
+		for (int i = 0; i < listSize; ++i) {
+			Col(0, 15);
+			setcur(0, i + 1);
+			p_IO->GetCaseList()->GetCase(i)->PrintCase(p_IO->GetCaseList()->GetNumberOfSpaces(i));
+			std::cout << std::endl;
+		}
+		std::cout << "Назад\n";
+		
+		
+	}
+	return 0;
+}
+
+int Menu::DrawChangeCaseMenu(int numCase)
+{
+	if (numCase < 0) numCase = 0;
+	system("cls");
+	Col(0, 15);
+	setcur(0, 0);
+	p_IO->GetCaseList()->GetCase(numCase)->PrintCase(p_IO->GetCaseList()->GetNumberOfSpaces(numCase));
+
+	Col(0, 15);
+	setcur(0, 1); std::cout << "Изменить название";
+	setcur(0, 2); std::cout << "Изменить дату";
+	setcur(0, 3); std::cout << "Удалить дело";
+	setcur(0, 4); std::cout << "Поставить отметку";
+	setcur(0, 5); std::cout << "Назад";
+}
 
 
 /*!
@@ -299,64 +392,61 @@ int Menu::ChooseCaseMenu(int nCase)
 \param[in] numCase номер дела
 \param[out] номер пункта меню
 */
-int Menu::ChangeCaseMenu(int numCase, int numAction)
+int Menu::ChangeCaseMenu(volatile int numAction, int prevAction)
 {
-	if (numCase < 0) numCase = 0;
-	size_t num = 1;
-	do {
+			
+	if (prevAction == 1)
+	{
+		Col(0, 15);
+		setcur(0, prevAction); std::cout << "Изменить название";
+	}
+	else if (prevAction == 2)
+	{
+		Col(0, 15);
+		setcur(0, prevAction); std::cout << "Изменить дату";
+	}
+	else if (prevAction == 3)
+	{
+		Col(0, 15);
+		setcur(0, prevAction); std::cout << "Удалить дело";
+	}
+	else if (prevAction == 4)
+	{
+		Col(0, 15);
+		setcur(0, prevAction); std::cout << "Поставить отметку";
+	}
+	else if (prevAction == 5)
+	{
+		Col(0, 15);
+		setcur(0, prevAction); std::cout << "Назад\n";
+	}
 
-		switch (num)
-		{
-		case 1:
-			system("cls");
-			p_IO->GetCaseList()->GetCase(numCase)->PrintCase(p_IO->GetCaseList()->GetNumberOfSpaces(numCase));
-			std::cout << "\n\x1b[36mИзменить название\x1b[0m\n";
-			std::cout << "Изменить дату\n";
-			std::cout << "Удалить дело\n";
-			std::cout << "Поставить отметку\n";
-			std::cout << "Назад\n";
-			break;
-		case 2:
-			system("cls");
-			p_IO->GetCaseList()->GetCase(numCase)->PrintCase(p_IO->GetCaseList()->GetNumberOfSpaces(numCase));
-			std::cout << "\nИзменить название\n";
-			std::cout << "\x1b[36mИзменить дату\x1b[0m\n";
-			std::cout << "Удалить дело\n";
-			std::cout << "Поставить отметку\n";
-			std::cout << "Назад\n";
-			break;
-		case 3:
-			system("cls");
-			p_IO->GetCaseList()->GetCase(numCase)->PrintCase(p_IO->GetCaseList()->GetNumberOfSpaces(numCase));
-			std::cout << "\nИзменить название\n";
-			std::cout << "Изменить дату\n";
-			std::cout << "\x1b[36mУдалить дело\x1b[0m\n";
-			std::cout << "Поставить отметку\n";
-			std::cout << "Назад\n";
-			break;
-		case 4:
-			system("cls");
-			p_IO->GetCaseList()->GetCase(numCase)->PrintCase(p_IO->GetCaseList()->GetNumberOfSpaces(numCase));
-			std::cout << "\nИзменить название\n";
-			std::cout << "Изменить дату\n";
-			std::cout << "Удалить дело\n";
-			std::cout << "\x1b[36mПоставить отметку\x1b[0m\n";
-			std::cout << "Назад\n";
-			break;
-		case 5:
-			system("cls");
-			p_IO->GetCaseList()->GetCase(numCase)->PrintCase(p_IO->GetCaseList()->GetNumberOfSpaces(numCase));
-			std::cout << "\nИзменить название\n";
-			std::cout << "Изменить дату\n";
-			std::cout << "Удалить дело\n";
-			std::cout << "Поставить отметку\n";
-			std::cout << "\x1b[36mНазад\x1b[0m\n";
-			break;
-		default:
-			break;
-		}
-	} while (input_menu(1, 5, num) != '\r');
-	return num;
+	if (numAction == 1)
+	{
+		Col(0, 9);
+		setcur(0, numAction); std::cout << "Изменить название";
+	}
+	else if (numAction == 2)
+	{
+		Col(0, 9);
+		setcur(0, numAction); std::cout << "Изменить дату";
+	}
+	else if (numAction == 3)
+	{
+		Col(0, 9);
+		setcur(0, numAction); std::cout << "Удалить дело";
+	}
+	else if (numAction == 4)
+	{
+		Col(0, 9);
+		setcur(0, numAction); std::cout << "Поставить отметку";
+	}
+	else if (numAction == 5)
+	{
+		Col(0, 9);
+		setcur(0, numAction); std::cout << "Назад\n";
+	}
+	return 0;
 }
 
 /*!

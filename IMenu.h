@@ -10,8 +10,10 @@ interface IMenu
 	virtual void MainMenu() = 0;
 	virtual void PrintOverdueCaseList() = 0;
 	virtual void Draw_menu(const int numAction) = 0;
-	virtual char input_menu(int low, int hi, size_t& numAcion) = 0;
-	virtual int ChooseCaseMenu(int nCase) = 0;
+	virtual char input_menu(int low, int hi, volatile size_t& numAcion) = 0;
+	virtual int ChooseCaseMenu(int nCase, int prevCase) = 0;
+	virtual int DrawChooseCaseMenu() = 0;
+	virtual int DrawChangeCaseMenu(int numCase) = 0;
 	virtual int ChangeCaseMenu(int numCase, int numAction) = 0;
 	virtual int MarkCaseMenu() = 0;
 };

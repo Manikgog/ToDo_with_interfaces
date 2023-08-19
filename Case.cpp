@@ -31,7 +31,7 @@ Date Case::GetDate()
 \brief метод вывода на экран дела
 \param[in] elLength количество пробелов для выравнивания
 */
-void Case::PrintCase(int elLength)
+void Case::PrintCase(size_t elLength)
 {
 	std::cout << _title;
 	while (elLength-- > 0)
