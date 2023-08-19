@@ -66,6 +66,7 @@ void Menu::MainMenu()
 			do {
 				system("cls");
 				DrawChooseCaseMenu();
+				nCase = 0;
 				int prevCase = nCase;
 				do {
 					if (1 == ChooseCaseMenu(nCase, prevCase)) { //< если список пуст
@@ -118,7 +119,7 @@ void Menu::MainMenu()
 			//< clearing the entire list
 			//< очистка всего списка
 			system("cls");
-
+			Col(0, 15);
 			std::cout << "Вы уверены, что хотите удалить все задачи (д/н)? ";
 			std::cin >> answer;
 			if (answer == 'д' || answer == 'y')
@@ -138,6 +139,7 @@ void Menu::MainMenu()
 				numAction = 1;
 				break;
 			}
+			Col(0, 15);
 			p_IO->GetCaseList()->SortCaseListByDate();
 			p_IO->GetCaseList()->PrintCaseList();
 			system("pause");
@@ -190,8 +192,8 @@ void Menu::Draw_menu(const int numAction) {
 	setcur(0, 2); std::cout << "Варианты действий:";
 	setcur(0, 3); std::cout << "Добавление нового дела.";
 	setcur(0, 4); std::cout << "Выбор дела.";
-	setcur(0, 5); std::cout << "Сортировка списка.";
-	setcur(0, 6); std::cout << "Очистка всего списка дел.";
+	setcur(0, 5); std::cout << "Очистка всего списка дел.";
+	setcur(0, 6); std::cout << "Сортировка списка.";
 	setcur(0, 7); std::cout << "Выход из программы.";
 	setcur(0, 8); std::cout << "Для выбора пункта меню пользуйтесь стрелками вверх и вниз на клавиатуре и кнопкой ВВОД.";
 	return;
@@ -212,12 +214,12 @@ void Menu::Variant_Menu(int numCase, int prevCase)
 	else if (prevCase == 3)
 	{
 		Col(0, 15);
-		setcur(0, prevCase + 2); std::cout << "Сортировка списка.";
+		setcur(0, prevCase + 2); std::cout << "Очистка всего списка дел.";
 	}
 	else if (prevCase == 4)
 	{
 		Col(0, 15);
-		setcur(0, prevCase + 2); std::cout << "Очистка всего списка дел.";
+		setcur(0, prevCase + 2); std::cout << "Сортировка списка.";
 	}
 	else if (prevCase == 5)
 	{
@@ -238,12 +240,12 @@ void Menu::Variant_Menu(int numCase, int prevCase)
 	else if (numCase == 3)
 	{
 		Col(0, 9);
-		setcur(0, numCase + 2); std::cout << "Сортировка списка.";
+		setcur(0, numCase + 2); std::cout << "Очистка всего списка дел.";
 	}
 	else if (numCase == 4)
 	{
 		Col(0, 9);
-		setcur(0, numCase + 2); std::cout << "Очистка всего списка дел.";
+		setcur(0, numCase + 2); std::cout << "Сортировка списка.";
 	}
 	else if (numCase == 5)
 	{
@@ -313,6 +315,16 @@ int Menu::ChooseCaseMenu(int nCase, int prevCase)
 		setcur(0, 0); std::cout << "Список запланированных дел:";
 		if (nCase >= 0 && nCase < listSize) {
 			for (int i = 0; i < listSize; ++i) {
+				if (nCase == prevCase)
+				{
+					if (nCase == i)
+					{
+						Col(0, 9);
+						setcur(0, nCase + 1);
+						p_IO->GetCaseList()->GetCase(i)->PrintCase(p_IO->GetCaseList()->GetNumberOfSpaces(i));
+					}
+					continue;
+				}
 				if (nCase == i)
 				{
 					Col(0, 9);
