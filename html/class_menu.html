@@ -77,7 +77,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>класса <a class="el" href="class_menu.html" title="класса Menu служит для обеспечения графического интерфейса с пользователем через различные меню....">Menu</a> служит для обеспечения графического интерфейса с пользователем через различные меню. Метод <a class="el" href="class_menu.html#a3b8b00715336601914f644ab6dbe17af" title="метод обеспечивающий текстовый интерфейс с пользователем">MainMenu()</a> обеспечивает основной цикл программы. Метод <a class="el" href="class_menu.html#a9f96135ad010db9e4a9c0c62dc608d04" title="метод для вывода на экран списка просроченных дел">PrintOverdueCaseList()</a> выводит на экран дела, у которых вышел срок выполнения. Метод <a class="el" href="class_menu.html#aaa123e298df5399174ce1f3c19a008c1" title="метод для вывода на экран списка просроченных дел param[in] numAction целочисленная переменная для по...">Draw_menu(const int numAction)</a> отображает основное меню. Метод input_menu(int low, int hi, int&amp; numAcion) обеспечивает выбор пользователем того или иного пункта всех меню программы. Метод ChooseCaseMenu(int nCase) отображает меню выбора дела для дальнейшей его обработки или удаления. Метод <a class="el" href="class_menu.html#a23cb77be52d35761fd52bd874011afca" title="метод для отображения меню выбора действия для изменения или удаления дела">ChangeCaseMenu(int numCase, int numAction)</a> отображает меню выбора действий, которые можно выполнить с выбранным в предыдущем меню делом. Метод <a class="el" href="class_menu.html#a33f068e51d17ab0de9e8a4f5889eaa46">MarkCaseMenu()</a> отображает меню для выбора отметки выполнено или не выполнено.  
+<p>класса <a class="el" href="class_menu.html" title="класса Menu служит для обеспечения графического интерфейса с пользователем через различные меню....">Menu</a> служит для обеспечения графического интерфейса с пользователем через различные меню. Метод <a class="el" href="class_menu.html#a3b8b00715336601914f644ab6dbe17af" title="метод обеспечивающий текстовый интерфейс с пользователем">MainMenu()</a> обеспечивает основной цикл программы. Метод <a class="el" href="class_menu.html#a9f96135ad010db9e4a9c0c62dc608d04" title="метод для вывода на экран списка просроченных дел">PrintOverdueCaseList()</a> выводит на экран дела, у которых вышел срок выполнения. Метод <a class="el" href="class_menu.html#aaa123e298df5399174ce1f3c19a008c1" title="метод для вывода на экран списка просроченных дел param[in] numAction целочисленная переменная для по...">Draw_menu(const int numAction)</a> отображает основное меню. Метод input_menu(int low, int hi, int&amp; numAcion) обеспечивает выбор пользователем того или иного пункта всех меню программы. Метод ChooseCaseMenu(int nCase) отображает меню выбора дела для дальнейшей его обработки или удаления. Метод <a class="el" href="class_menu.html#a23cb77be52d35761fd52bd874011afca" title="метод для отображения меню выбора действия для изменения или удаления дела">ChangeCaseMenu(int numCase, int numAction)</a> отображает меню выбора действий, которые можно выполнить с выбранным в предыдущем меню делом. Метод <a class="el" href="class_menu.html#ace6e8834a422b3c259de9cc36f25a002">MarkCaseMenu()</a> отображает меню для выбора отметки выполнено или не выполнено.  
  <a href="class_menu.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_menu_8h_source.html">Menu.h</a>&gt;</code></p>
@@ -125,11 +125,14 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>DrawChangeCaseMenu</b>
 <tr class="memitem:a23cb77be52d35761fd52bd874011afca"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_menu.html#a23cb77be52d35761fd52bd874011afca">ChangeCaseMenu</a> (int numCase, int numAction)</td></tr>
 <tr class="memdesc:a23cb77be52d35761fd52bd874011afca"><td class="mdescLeft">&#160;</td><td class="mdescRight">метод для отображения меню выбора действия для изменения или удаления дела  <br /></td></tr>
 <tr class="separator:a23cb77be52d35761fd52bd874011afca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a33f068e51d17ab0de9e8a4f5889eaa46"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_menu.html#a33f068e51d17ab0de9e8a4f5889eaa46">MarkCaseMenu</a> ()</td></tr>
-<tr class="separator:a33f068e51d17ab0de9e8a4f5889eaa46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af172a7ff0938339305bf045470f6ed33"><td class="memItemLeft" align="right" valign="top"><a id="af172a7ff0938339305bf045470f6ed33" name="af172a7ff0938339305bf045470f6ed33"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>DrawMarkCaseMenu</b> ()</td></tr>
+<tr class="separator:af172a7ff0938339305bf045470f6ed33"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace6e8834a422b3c259de9cc36f25a002"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_menu.html#ace6e8834a422b3c259de9cc36f25a002">MarkCaseMenu</a> (int numAction, int prevAction)</td></tr>
+<tr class="separator:ace6e8834a422b3c259de9cc36f25a002"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>класса <a class="el" href="class_menu.html" title="класса Menu служит для обеспечения графического интерфейса с пользователем через различные меню....">Menu</a> служит для обеспечения графического интерфейса с пользователем через различные меню. Метод <a class="el" href="class_menu.html#a3b8b00715336601914f644ab6dbe17af" title="метод обеспечивающий текстовый интерфейс с пользователем">MainMenu()</a> обеспечивает основной цикл программы. Метод <a class="el" href="class_menu.html#a9f96135ad010db9e4a9c0c62dc608d04" title="метод для вывода на экран списка просроченных дел">PrintOverdueCaseList()</a> выводит на экран дела, у которых вышел срок выполнения. Метод <a class="el" href="class_menu.html#aaa123e298df5399174ce1f3c19a008c1" title="метод для вывода на экран списка просроченных дел param[in] numAction целочисленная переменная для по...">Draw_menu(const int numAction)</a> отображает основное меню. Метод input_menu(int low, int hi, int&amp; numAcion) обеспечивает выбор пользователем того или иного пункта всех меню программы. Метод ChooseCaseMenu(int nCase) отображает меню выбора дела для дальнейшей его обработки или удаления. Метод <a class="el" href="class_menu.html#a23cb77be52d35761fd52bd874011afca" title="метод для отображения меню выбора действия для изменения или удаления дела">ChangeCaseMenu(int numCase, int numAction)</a> отображает меню выбора действий, которые можно выполнить с выбранным в предыдущем меню делом. Метод <a class="el" href="class_menu.html#a33f068e51d17ab0de9e8a4f5889eaa46">MarkCaseMenu()</a> отображает меню для выбора отметки выполнено или не выполнено. </p>
+<div class="textblock"><p>класса <a class="el" href="class_menu.html" title="класса Menu служит для обеспечения графического интерфейса с пользователем через различные меню....">Menu</a> служит для обеспечения графического интерфейса с пользователем через различные меню. Метод <a class="el" href="class_menu.html#a3b8b00715336601914f644ab6dbe17af" title="метод обеспечивающий текстовый интерфейс с пользователем">MainMenu()</a> обеспечивает основной цикл программы. Метод <a class="el" href="class_menu.html#a9f96135ad010db9e4a9c0c62dc608d04" title="метод для вывода на экран списка просроченных дел">PrintOverdueCaseList()</a> выводит на экран дела, у которых вышел срок выполнения. Метод <a class="el" href="class_menu.html#aaa123e298df5399174ce1f3c19a008c1" title="метод для вывода на экран списка просроченных дел param[in] numAction целочисленная переменная для по...">Draw_menu(const int numAction)</a> отображает основное меню. Метод input_menu(int low, int hi, int&amp; numAcion) обеспечивает выбор пользователем того или иного пункта всех меню программы. Метод ChooseCaseMenu(int nCase) отображает меню выбора дела для дальнейшей его обработки или удаления. Метод <a class="el" href="class_menu.html#a23cb77be52d35761fd52bd874011afca" title="метод для отображения меню выбора действия для изменения или удаления дела">ChangeCaseMenu(int numCase, int numAction)</a> отображает меню выбора действий, которые можно выполнить с выбранным в предыдущем меню делом. Метод <a class="el" href="class_menu.html#ace6e8834a422b3c259de9cc36f25a002">MarkCaseMenu()</a> отображает меню для выбора отметки выполнено или не выполнено. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a23cb77be52d35761fd52bd874011afca" name="a23cb77be52d35761fd52bd874011afca"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a23cb77be52d35761fd52bd874011afca">&#9670;&#160;</a></span>ChangeCaseMenu()</h2>
@@ -168,8 +171,8 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>DrawChangeCaseMenu</b>
 
 </div>
 </div>
-<a id="a33f068e51d17ab0de9e8a4f5889eaa46" name="a33f068e51d17ab0de9e8a4f5889eaa46"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a33f068e51d17ab0de9e8a4f5889eaa46">&#9670;&#160;</a></span>MarkCaseMenu()</h2>
+<a id="ace6e8834a422b3c259de9cc36f25a002" name="ace6e8834a422b3c259de9cc36f25a002"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace6e8834a422b3c259de9cc36f25a002">&#9670;&#160;</a></span>MarkCaseMenu()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -177,8 +180,19 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>DrawChangeCaseMenu</b>
         <tr>
           <td class="memname">int Menu::MarkCaseMenu </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>numAction</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>prevAction</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">

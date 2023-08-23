@@ -5,7 +5,23 @@
 InputOutput::InputOutput(const std::string& filename) : _list(filename)
 {}
 
+void InputOutput::CursorOff()
+{
+	HANDLE handle = GetStdHandle(STD_OUTPUT_HANDLE);
+	CONSOLE_CURSOR_INFO structCursorInfo;
+	structCursorInfo.bVisible = FALSE;
+	SetConsoleCursorInfo(handle, &structCursorInfo);
+	return;
+}
 
+void InputOutput::CursorOn()
+{
+	HANDLE handle = GetStdHandle(STD_OUTPUT_HANDLE);
+	CONSOLE_CURSOR_INFO structCursorInfo;
+	structCursorInfo.bVisible = TRUE;
+	SetConsoleCursorInfo(handle, &structCursorInfo);
+	return;
+}
 
 
 /*!
@@ -43,8 +59,18 @@ void InputOutput::ChangeTitle(int numCase)
 	std::string answer;
 	std::cout << "\x1b[33mВведите новое название дела: \x1b[0m";
 	answer = "";
+
+	HANDLE handle = GetStdHandle(STD_OUTPUT_HANDLE);
+	CONSOLE_CURSOR_INFO structCursorInfo;
+	structCursorInfo.bVisible = TRUE;
+	SetConsoleCursorInfo(handle, &structCursorInfo);
+	
 	std::getline(std::cin, answer);
 	_list.ChangeTitle(answer, numCase);
+
+	
+	structCursorInfo.bVisible = FALSE;
+	SetConsoleCursorInfo(handle, &structCursorInfo);
 }
 
 /*!

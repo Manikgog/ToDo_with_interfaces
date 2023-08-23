@@ -31,7 +31,9 @@ public:
 	
 private:
 	CaseList _list;						//> класс CaseList для хранения и выполнения манипуляций со списком дел
-		
+	void CursorOn();
+	void CursorOff();
+
 };
 
 

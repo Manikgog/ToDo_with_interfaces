@@ -15,7 +15,8 @@ interface IMenu
 	virtual int DrawChooseCaseMenu() = 0;
 	virtual int DrawChangeCaseMenu(int numCase) = 0;
 	virtual int ChangeCaseMenu(int numCase, int numAction) = 0;
-	virtual int MarkCaseMenu() = 0;
+	virtual void DrawMarkCaseMenu() = 0;
+	virtual int MarkCaseMenu(int numAction, int prevAction) = 0;
 };
 
 #endif // !_IMENU_H_

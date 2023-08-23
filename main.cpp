@@ -7,12 +7,13 @@
 #include "Menu.h"
 
 int main() {
+
 	system("chcp 1251");
 	system("cls");
 	HANDLE handle = GetStdHandle(STD_OUTPUT_HANDLE);
 	CONSOLE_CURSOR_INFO structCursorInfo;
 	structCursorInfo.bVisible = FALSE;
-	//SetConsoleCursorInfo(handle, &structCursorInfo);
+	SetConsoleCursorInfo(handle, &structCursorInfo);
 
 	IMenu* p_IMenu = new Menu("case.bin");
 

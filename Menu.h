@@ -35,7 +35,8 @@ public:
 	int DrawChooseCaseMenu();
 	int DrawChangeCaseMenu(int numCase);
 	int ChangeCaseMenu(int numCase, int numAction);
-	int MarkCaseMenu();
+	void DrawMarkCaseMenu();
+	int MarkCaseMenu(int numAction, int prevAction);
 };
 
 #endif // !_MENU_H_

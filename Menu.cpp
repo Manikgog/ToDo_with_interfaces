@@ -106,7 +106,14 @@ void Menu::MainMenu()
 				}
 				else if (numAction == 4)
 				{
-					p_IO->ChangeMarkCase(nCase, this->MarkCaseMenu());
+					numAction = 0;
+					prevAction = numAction;
+					DrawMarkCaseMenu();
+					do {
+						numAction = this->MarkCaseMenu(numAction, prevAction);
+						prevAction = numAction;
+					} while (input_menu(1, 3, numAction) != '\r');
+					p_IO->ChangeMarkCase(nCase, numAction);
 				}
 				
 					
@@ -461,39 +468,55 @@ int Menu::ChangeCaseMenu(volatile int numAction, int prevAction)
 	return 0;
 }
 
+
+
+void Menu::DrawMarkCaseMenu()
+{
+	Col(0, 15);
+	setcur(0, 0); std::cout << "Выберите отметку:";
+	setcur(0, 1); std::cout << "Выполнено";
+	setcur(0, 2); std::cout << "Не выполнено";
+	setcur(0, 3); std::cout << "Назад";
+}
+
+
 /*!
 метод для отметки дела как выполненное или нет
 \param[in] numCase номер дела
 */
-int Menu::MarkCaseMenu()
+int Menu::MarkCaseMenu(int numAction, int prevAction)
 {
-	size_t num = 3;
-	do {
-		switch (num)
-		{
-		case 1:
-			system("cls");
-			std::cout << "Выберите отметку:\n";
-			std::cout << "\x1b[36mВыполнено\x1b[0m\n";
-			std::cout << "Не выполнено\n";
-			std::cout << "Назад\n";
-			break;
-		case 2:
-			system("cls");
-			std::cout << "Выберите отметку:\n";
-			std::cout << "Выполнено\n";
-			std::cout << "\x1b[36mНе выполнено\x1b[0m\n";
-			std::cout << "Назад\n";
-			break;
-		case 3:
-			system("cls");
-			std::cout << "Выберите отметку:\n";
-			std::cout << "Выполнено\n";
-			std::cout << "Не выполнено\n";
-			std::cout << "\x1b[36mНазад\x1b[0m\n";
-			break;
-		}
-	} while (input_menu(1, 3, num) != '\r');
-
-	return num;
+	if (prevAction == 1)
+	{
+		Col(0, 15);
+		setcur(0, prevAction); std::cout << "Выполнено";
+	}
+	else if (prevAction == 2)
+	{
+		Col(0, 15);
+		setcur(0, prevAction); std::cout << "Не выполнено";
+	}
+	else if (prevAction == 3)
+	{
+		Col(0, 15);
+		setcur(0, prevAction); std::cout << "Назад";
+	}
+	
+	if (numAction == 1)
+	{
+		Col(0, 9);
+		setcur(0, numAction); std::cout << "Выполнено";
+	}
+	else if (numAction == 2)
+	{
+		Col(0, 9);
+		setcur(0, numAction); std::cout << "Не выполнено";
+	}
+	else if (numAction == 3)
+	{
+		Col(0, 9);
+		setcur(0, numAction); std::cout << "Назад";
+	}
+	
+	return numAction;
 }
