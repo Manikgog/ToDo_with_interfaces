@@ -30,7 +30,7 @@ public:
 	void PrintOverdueCaseList();
 	void Draw_menu(const int numAction);
 	void Variant_Menu(int numCase, int prevCase);
-	char input_menu(int low, int hi, volatile size_t& numAcion);
+	char input_menu(int low, int hi, volatile int& numAcion);
 	int ChooseCaseMenu(int nCase, int prevCase);
 	int DrawChooseCaseMenu();
 	int DrawChangeCaseMenu(int numCase);

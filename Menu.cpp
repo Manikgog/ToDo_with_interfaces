@@ -34,7 +34,7 @@ Menu::~Menu()
 void Menu::MainMenu()
 {
 	bool exit = true;		//< exit - variable-flag for exiting the program / переменна¤-флаг дл¤ выхода из программы
-	volatile size_t numAction = 0;	//< numAction - variable for storing an action option from the menu selected by the user
+	volatile int numAction = 0;	//< numAction - variable for storing an action option from the menu selected by the user
 	std::cout << "\x1b[32mПрограмма дл¤ создания списка запланированных дел.\x1b[0m\n";
 	if (!p_IO->GetCaseList()->Size())
 	{
@@ -53,7 +53,7 @@ void Menu::MainMenu()
 			
 		} while (input_menu(1, 5, numAction) != '\r');
 
-		volatile size_t nCase = 0;			//<  nCase - variable for storing the number of the selected case / переменна¤ дл¤ хранени¤ номера выбранного дела
+		volatile int nCase = 0;			//<  nCase - variable for storing the number of the selected case / переменна¤ дл¤ хранени¤ номера выбранного дела
 		int nAction = 0;			//< nAction - variable for storing the action number on the selected case / переменная для хранения номера действия над выбранным делом
 		switch (numAction) {
 
@@ -69,6 +69,7 @@ void Menu::MainMenu()
 				nCase = 0;
 				int prevCase = nCase;
 				do {
+					
 					if (1 == ChooseCaseMenu(nCase, prevCase)) { //< если список пуст
 						numAction = 1;
 						break;
@@ -269,7 +270,7 @@ param[in] hi верхняя граница номера меню
 param[in] numAction текущий номер действия в меню
 param[out] возвращает результат в виде значения типа char
 */
-char Menu::input_menu(int low, int hi, volatile size_t& numAcion) {
+char Menu::input_menu(int low, int hi, volatile int& numAcion) {
 	int c1 = 0;
 	int c2 = 0;
 	int c = c1 + c2;
@@ -353,8 +354,17 @@ int Menu::ChooseCaseMenu(int nCase, int prevCase)
 		if (nCase == listSize)
 		{
 			Col(0, 15);
-			setcur(0, listSize);
-			p_IO->GetCaseList()->GetCase(listSize-1)->PrintCase(p_IO->GetCaseList()->GetNumberOfSpaces(listSize - 1));
+			if (prevCase == 0)
+			{
+				setcur(0, prevCase + 1);
+				p_IO->GetCaseList()->GetCase(prevCase)->PrintCase(p_IO->GetCaseList()->GetNumberOfSpaces(prevCase));
+			}
+			else {
+				setcur(0, listSize);
+				p_IO->GetCaseList()->GetCase(listSize - 1)->PrintCase(p_IO->GetCaseList()->GetNumberOfSpaces(listSize - 1));
+			}
+			
+			
 			Col(0, 9);
 			setcur(0, listSize + 1); std::cout << "Назад\n";
 		}
