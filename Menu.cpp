@@ -413,6 +413,7 @@ int Menu::DrawChangeCaseMenu(int numCase)
 	setcur(0, 3); std::cout << "Удалить дело";
 	setcur(0, 4); std::cout << "Поставить отметку";
 	setcur(0, 5); std::cout << "Назад";
+	return 0;
 }
 
 
